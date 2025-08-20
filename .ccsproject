@@ -17,4 +17,5 @@
 	<sourceLookupPath value="${COM_TI_MSPM0_SDK_INSTALL_DIR}/source/ti/driverlib"/>
 	<origin value="/Applications/ti/mspm0_sdk_2_04_00_06/examples/rtos/LP_MSPM0G3507/drivers/i2c_controller/freertos/ticlang/i2c_controller_LP_MSPM0G3507_freertos_ticlang.projectspec"/>
 	<filesToOpen value="README.md"/>
+	<isTargetManual value="false"/>
 </projectOptions>

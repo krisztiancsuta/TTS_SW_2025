@@ -2,7 +2,9 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-CG_TOOL_ROOT := /Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_4.0.2.LTS
+SHELL = cmd.exe
+
+CG_TOOL_ROOT := C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -23,15 +25,15 @@ ORDERED_OBJS += \
 "./ti/display/DisplayUart.o" \
 "../mspm0g3507.cmd" \
 $(GEN_CMDS__FLAG) \
--Wl,-l"/Users/krisztiancsuta/ti/mspm0_sdk_2_04_00_06/source/ti/drivers/lib/ticlang/m0p/drivers_mspm0g1x0x_g3x0x.a" \
+-Wl,-l"C:/ti/mspm0_sdk_2_05_01_00/source/ti/drivers/lib/ticlang/m0p/drivers_mspm0g1x0x_g3x0x.a" \
 -Wl,-lfreertos_builds_LP_MSPM0G3507_release_ticlang.lib \
--Wl,-l"/Users/krisztiancsuta/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/lib/ticlang/m0p/mspm0g1x0x_g3x0x/driverlib.a" \
+-Wl,-l"C:/ti/mspm0_sdk_2_05_01_00/source/ti/driverlib/lib/ticlang/m0p/mspm0g1x0x_g3x0x/driverlib.a" \
 -Wl,-llibc.a \
 
 -include ../makefile.init
 
-RM := rm -rf
-RMDIR := rm -rf
+RM := DEL /F
+RMDIR := RMDIR /S/Q
 
 # All of the sources participating in the build are defined here
 -include sources.mk
@@ -148,28 +150,28 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "TTS_SW_2025.out"
 
 dependents:
-	-cd /Users/krisztiancsuta/Documents/FRT/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug && $(MAKE) all
+	-cd C:/Users/krisz/workspace_v12/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug && $(MAKE) clean all
 
 # Tool invocations
-TTS_SW_2025.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) /Users/krisztiancsuta/Documents/FRT/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug/freertos_builds_LP_MSPM0G3507_release_ticlang.lib
+TTS_SW_2025.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) C:/Users/krisz/workspace_v12/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug/freertos_builds_LP_MSPM0G3507_release_ticlang.lib
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_4.0.2.LTS/bin/tiarmclang" -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -D__MSPM0G3507__ -gdwarf-3 -Wl,-m"TTS_SW_2025.map" -Wl,-i"/Users/krisztiancsuta/Documents/FRT/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug" -Wl,-i"/Users/krisztiancsuta/ti/mspm0_sdk_2_04_00_06/source" -Wl,-i"/Users/krisztiancsuta/Documents/FRT/TTS_SW_2025" -Wl,-i"/Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_4.0.2.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="TTS_SW_2025_linkInfo.xml" -Wl,--rom_model -o "TTS_SW_2025.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -D__MSPM0G3507__ -gdwarf-3 -Wl,-m"TTS_SW_2025.map" -Wl,-i"C:/Users/krisz/workspace_v12/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug" -Wl,-i"C:/ti/mspm0_sdk_2_05_01_00/source" -Wl,-i"C:/Users/krisz/Documents/GitHub/TTS_SW_2025" -Wl,-i"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="TTS_SW_2025_linkInfo.xml" -Wl,--rom_model -o "TTS_SW_2025.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "MAS_CAN.o" "MLX90640_API.o" "MLX90640_Driver.o" "MLX90640_I2C_MSP.o" "MLX90640_Init.o" "MLX90640_Process.o" "i2ccontroller.o" "main_freertos.o" "ti_drivers_config.o" "ti_msp_dl_config.o" "freertos/ticlang/startup_mspm0g350x_ticlang.o" "ti/display/Display.o" "ti/display/DisplayUart.o" 
-	-$(RM) "MAS_CAN.d" "MLX90640_API.d" "MLX90640_Driver.d" "MLX90640_I2C_MSP.d" "MLX90640_Init.d" "MLX90640_Process.d" "i2ccontroller.d" "main_freertos.d" "ti_drivers_config.d" "ti_msp_dl_config.d" "freertos/ticlang/startup_mspm0g350x_ticlang.d" "ti/display/Display.d" "ti/display/DisplayUart.d" 
+	-$(RM) "MAS_CAN.o" "MLX90640_API.o" "MLX90640_Driver.o" "MLX90640_I2C_MSP.o" "MLX90640_Init.o" "MLX90640_Process.o" "i2ccontroller.o" "main_freertos.o" "ti_drivers_config.o" "ti_msp_dl_config.o" "freertos\ticlang\startup_mspm0g350x_ticlang.o" "ti\display\Display.o" "ti\display\DisplayUart.o" 
+	-$(RM) "MAS_CAN.d" "MLX90640_API.d" "MLX90640_Driver.d" "MLX90640_I2C_MSP.d" "MLX90640_Init.d" "MLX90640_Process.d" "i2ccontroller.d" "main_freertos.d" "ti_drivers_config.d" "ti_msp_dl_config.d" "freertos\ticlang\startup_mspm0g350x_ticlang.d" "ti\display\Display.d" "ti\display\DisplayUart.d" 
 	-$(RM) "MLX90640_API.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
 .PHONY: all clean dependents
 .SECONDARY:
-/Users/krisztiancsuta/Documents/FRT/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug/freertos_builds_LP_MSPM0G3507_release_ticlang.lib:
+C:/Users/krisz/workspace_v12/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug/freertos_builds_LP_MSPM0G3507_release_ticlang.lib:
 
 -include ../makefile.targets
 

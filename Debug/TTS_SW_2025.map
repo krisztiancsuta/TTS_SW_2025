@@ -1,17 +1,17 @@
 ******************************************************************************
-            TI ARM Clang Linker Unix v4.0.2                    
+            TI ARM Clang Linker PC v3.2.2                      
 ******************************************************************************
->> Linked Wed Aug 20 09:26:07 2025
+>> Linked Wed Aug 20 10:40:18 2025
 
 OUTPUT FILE NAME:   <TTS_SW_2025.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00009fdd
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000a0ed
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00020000  0000a8e8  00015718  R  X
+  FLASH                 00000000   00020000  0000a9f8  00015608  R  X
   SRAM                  20200000   00008000  00005a57  000025a9  RW X
   BCR_CONFIG            41c00000   000000ff  00000000  000000ff  R   
   BSL_CONFIG            41c00100   00000080  00000000  00000080  R   
@@ -21,11 +21,11 @@ SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    0000a8e8   0000a8e8    r-x
+00000000    00000000    0000a9f8   0000a9f8    r-x
   00000000    00000000    000000c0   000000c0    r-- .intvecs
-  000000c0    000000c0    0000a4f0   0000a4f0    r-x .text
-  0000a5b0    0000a5b0    000002c0   000002c0    r-- .rodata
-  0000a870    0000a870    00000078   00000078    r-- .cinit
+  000000c0    000000c0    0000a600   0000a600    r-x .text
+  0000a6c0    0000a6c0    000002c0   000002c0    r-- .rodata
+  0000a980    0000a980    00000078   00000078    r-- .cinit
 20200000    20200000    00005799   00000000    rw-
   20200000    20200000    00005486   00000000    rw- .bss
   20205488    20205488    00000311   00000000    rw- .data
@@ -43,362 +43,361 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    000000c0     
                   00000000    000000c0     startup_mspm0g350x_ticlang.o (.intvecs)
 
-.text      0    000000c0    0000a4f0     
-                  000000c0    00000a48     libc.a : e_pow.c.obj (.text.pow)
-                  00000b08    00000604     MLX90640_API.o (.text.MLX90640_CalculateTo)
-                  0000110c    00000550     MLX90640_API.o (.text.ExtractAlphaParameters)
-                  0000165c    000004f8     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_interruptHandler)
-                  00001b54    000004d0     MLX90640_API.o (.text.ExtractOffsetParameters)
-                  00002024    0000022c     MLX90640_API.o (.text.ExtractDeviatingPixels)
-                  00002250    0000021c     MLX90640_API.o (.text.MLX90640_ExtractParameters)
-                  0000246c    00000214     driverlib.a : dl_mcan.o (.text.DL_MCAN_msgRAMConfig)
-                  00002680    00000210     drivers_mspm0g1x0x_g3x0x.a : GPIOMSPM0.o (.text.GPIO_setConfigAndMux)
-                  00002890    000001f4     MLX90640_API.o (.text.ExtractKtaPixelParameters)
-                  00002a84    000001f4     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2C_open)
-                  00002c78    000001ec     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueSemaphoreTake)
-                  00002e64    000001dc     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_hwiFxn)
-                  00003040    000001d2     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGenericSend)
-                  00003212    00000002     startup_mspm0g350x_ticlang.o (.text.Default_Handler)
-                  00003214    000001c0     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : heap_4.o (.text.pvPortMalloc)
-                  000033d4    000001b8     MLX90640_API.o (.text.MLX90640_GetFrameData)
-                  0000358c    000001a8     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_enable)
-                  00003734    000001a4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueReceive)
-                  000038d8    000001a0     MLX90640_API.o (.text.ExtractKvPixelParameters)
-                  00003a78    00000192     libclang_rt.builtins.a : adddf3.S.obj (.text.adddf3_subdf3)
-                  00003c0a    00000002     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CSupport_powerRelConstraint)
-                  00003c0c    00000190     MLX90640_API.o (.text.ExtractCPParameters)
-                  00003d9c    00000188     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.vPortSuppressTicksAndSleep)
-                  00003f24    00000180     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_hwiFxn)
-                  000040a4    00000170     libc.a : e_sqrt.c.obj (.text.sqrt)
-                  00004214    00000158     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskIncrementTick)
-                  0000436c    00000154                                                       : timers.o (.text.prvProcessReceivedCommands)
-                  000044c0    0000014c                                                       : pthread.o (.text.pthread_create)
-                  0000460c    0000013c     MLX90640_I2C_MSP.o (.text.MLX90640_I2CRead)
-                  00004748    00000134     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskResumeAll)
-                  0000487c    0000012c     drivers_mspm0g1x0x_g3x0x.a : I2C.o (.text.I2C_transferTimeout)
-                  000049a8    00000120     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGenericSendFromISR)
-                  00004ac8    0000011c                                                       : tasks.o (.text.prvInitialiseNewTask)
-                  00004be4    0000011a     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_getn)
-                  00004cfe    00000116                                : RingBuf.o (.text.RingBuf_putn)
-                  00004e14    00000110     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.vTaskSuspend)
-                  00004f24    0000010c     libclang_rt.builtins.a : divdf3.S.obj (.text.__divdf3)
-                  00005030    00000108     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_primeWriteBurst)
-                  00005138    00000100     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.vTaskPriorityDisinheritAfterTimeout)
-                  00005238    000000fc     MLX90640_API.o (.text.ExtractKsToParameters)
-                  00005334    000000fc     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_dmaRx)
-                  00005430    000000f8                                : GPIOMSPM0.o (.text.GPIO_hwiIntFxn)
-                  00005528    000000f8     MLX90640_Process.o (.text.MLX90640_DataProcessing)
-                  00005620    000000f6     drivers_mspm0g1x0x_g3x0x.a : UART.o (.text.UART_readFullFeatured)
-                  00005716    000000f4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGiveFromISR)
-                  0000580a    00000002     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CSupport_powerSetConstraint)
-                  0000580c    000000ec                                : I2CMSPM0.o (.text.I2CMSPM0_primeReadBurst)
-                  000058f8    000000ec     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.vTaskSwitchContext)
-                  000059e4    000000ec                                                       : queue.o (.text.xQueueReceiveFromISR)
-                  00005ad0    000000e8                                                       : tasks.o (.text.vTaskDelete)
-                  00005bb8    000000e4     driverlib.a : dl_mcan.o (.text.DL_MCAN_config)
-                  00005c9c    000000e4                 : dl_mcan.o (.text.DL_MCAN_writeMsgRam)
-                  00005d80    000000e4     MLX90640_API.o (.text.MLX90640_GetTa)
-                  00005e64    000000e4     libclang_rt.builtins.a : muldf3.S.obj (.text.__muldf3)
-                  00005f48    000000e4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskPriorityInherit)
-                  0000602c    000000e0                                                       : tasks.o (.text.prvAddNewTaskToReadyList)
-                  0000610c    000000dc     driverlib.a : dl_mcan.o (.text.DL_MCAN_init)
-                  000061e8    000000dc                 : dl_sysctl_mspm0g1x0x_g3x0x.o (.text.DL_SYSCTL_configSYSPLL)
-                  000062c4    000000dc     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_init)
-                  000063a0    000000dc     ti_msp_dl_config.o (.text.SYSCFG_DL_MCAN0_init)
-                  0000647c    000000d8     driverlib.a : dl_mcan.o (.text.DL_MCAN_setBitTime)
-                  00006554    000000d8     libc.a : s_scalbn.c.obj (.text.scalbn)
-                  0000662c    000000d8     libclang_rt.builtins.a : addsf3.S.obj (.text)
-                  00006704    000000d4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.prvCopyDataToQueue)
-                  000067d8    000000c4                                                       : tasks.o (.text.xTaskPriorityDisinherit)
-                  0000689c    000000c0     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_open)
-                  0000695c    000000c0     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGenericCreateStatic)
-                  00006a1c    000000bc                                                       : HwiPMSPM0_freertos.o (.text.HwiP_construct)
-                  00006ad8    000000bc                                                       : heap_4.o (.text.prvInsertBlockIntoFreeList)
-                  00006b94    000000bc                                                       : tasks.o (.text.vTaskStartScheduler)
-                  00006c50    000000b6                                                       : queue.o (.text.prvUnlockQueue)
-                  00006d06    00000002     drivers_mspm0g1x0x_g3x0x.a : I2C.o (.text.I2C_init)
-                  00006d08    000000b4     MAS_CAN.o (.text.CAN_transfer)
-                  00006dbc    000000b4     drivers_mspm0g1x0x_g3x0x.a : UART.o (.text.UART_writeCallback)
-                  00006e70    000000b4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskCheckForTimeOut)
-                  00006f24    000000b0                                                       : tasks.o (.text.prvAddCurrentTaskToDelayedList)
-                  00006fd4    000000b0                                                       : heap_4.o (.text.prvHeapInit)
-                  00007084    000000b0                                                       : timers.o (.text.prvSwitchTimerLists)
-                  00007134    000000b0                                                       : tasks.o (.text.xTaskRemoveFromEventList)
-                  000071e4    000000ac     drivers_mspm0g1x0x_g3x0x.a : GPIOMSPM0.o (.text.GPIO_setInterruptConfig)
-                  00007290    000000ac     MLX90640_API.o (.text.MLX90640_GetVdd)
-                  0000733c    000000ac     MLX90640_I2C_MSP.o (.text.MLX90640_I2CWrite)
-                  000073e8    000000aa     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGenericCreate)
-                  00007492    00000002                                                       : port.o (.text.SVC_Handler)
-                  00007494    000000a8     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMA_Init)
-                  0000753c    000000a8     ti_msp_dl_config.o (.text.SYSCFG_DL_I2C_0_init)
-                  000075e4    000000a4     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_txChar)
-                  00007688    000000a2     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
-                  0000772a    00000002     ti_drivers_config.o (.text.UARTMSP_eventCallback)
-                  0000772c    000000a0     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : heap_4.o (.text.vPortFree)
-                  000077cc    000000a0                                                       : queue.o (.text.xQueueGenericReset)
-                  0000786c    0000009c     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_completeTransfer)
-                  00007908    0000009a     libc.a : memcpy16.S.obj (.text:memcpy)
-                  000079a2    00000098     drivers_mspm0g1x0x_g3x0x.a : UART.o (.text.UART_writeBuffered)
-                  00007a3a    00000094     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskCreateStatic)
-                  00007ace    00000092                                                       : tasks.o (.text.xTaskCreate)
-                  00007b60    00000090     driverlib.a : dl_interrupt.o (.text.DL_Interrupt_registerInterrupt)
-                  00007bf0    00000090     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_setupTransfer)
-                  00007c80    00000090     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.text.xTimerGenericCommand)
-                  00007d10    0000008c     libclang_rt.builtins.a : mulsf3.S.obj (.text.__mulsf3)
-                  00007d9c    0000008c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.text.prvProcessTimerOrBlockTask)
-                  00007e28    0000008c                                                       : pthread.o (.text.removeThreadKeys)
-                  00007eb4    0000008a                                                       : SemaphoreP_freertos.o (.text.SemaphoreP_pend)
-                  00007f3e    00000002     libclang_rt.builtins.a : aeabi_div0.c.obj (.text.__aeabi_idiv0)
-                  00007f40    00000088     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_close)
-                  00007fc8    00000084     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.__NVIC_SetPriority)
-                  0000804c    00000084                                                       : timers.o (.text.prvInsertTimerInActiveList)
-                  000080d0    00000082     libclang_rt.builtins.a : divsf3.S.obj (.text.__divsf3)
-                  00008152    00000002                            : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
-                  00008154    00000080     driverlib.a : dl_uart.o (.text.DL_UART_configBaudRate)
-                  000081d4    0000007c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : memory.o (.text.calloc)
-                  00008250    0000007c                                                       : tasks.o (.text.eTaskConfirmSleepModeStatus)
-                  000082cc    0000007c                                                       : tasks.o (.text.prvInitialiseTaskLists)
-                  00008348    0000007c                                                       : timers.o (.text.prvProcessExpiredTimer)
-                  000083c4    0000007c                                                       : timers.o (.text.xTimerCreateTimerTask)
-                  00008440    0000007c     libc.a : copy_decompress_lzss.c.obj (.text:decompress:lzss)
-                  000084bc    00000078     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_enableInts)
-                  00008534    00000074                                : I2CMSPM0.o (.text.I2CSupport_primeTransfer)
-                  000085a8    00000074     libclang_rt.builtins.a : comparedf2.c.obj (.text.__gedf2)
-                  0000861c    00000004     libsysbm.a : hostexit.c.obj (.text.HOSTexit)
-                  00008620    00000074     libclang_rt.builtins.a : truncdfsf2.S.obj (.text.__truncdfsf2)
-                  00008694    00000074     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.prvGetExpectedIdleTime)
-                  00008708    0000006e                                                       : pthread.o (.text.pthread_exit)
-                  00008776    00000002     --HOLE-- [fill = 0]
-                  00008778    0000006c                                                       : timers.o (.text.prvCheckForValidListAndQueue)
-                  000087e4    0000006c                                                       : list.o (.text.vListInsert)
-                  00008850    0000006a                                                       : queue.o (.text.vQueueWaitForMessageRestricted)
-                  000088ba    00000002     --HOLE-- [fill = 0]
-                  000088bc    00000068     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_disable)
-                  00008924    00000068     libclang_rt.builtins.a : comparedf2.c.obj (.text.__ledf2)
-                  0000898c    00000062                            : aeabi_dcmp.S.obj (.text.__aeabi_dcmp)
-                  000089ee    00000002     --HOLE-- [fill = 0]
-                  000089f0    00000062                            : aeabi_fcmp.S.obj (.text.__aeabi_fcmp)
-                  00008a52    00000062     libc.a : memset16.S.obj (.text:memset)
-                  00008ab4    0000005e     driverlib.a : dl_i2c.o (.text.DL_I2C_fillControllerTXFIFO)
-                  00008b12    00000002     --HOLE-- [fill = 0]
-                  00008b14    0000005c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.prvIdleTask)
-                  00008b70    0000005a                                                       : pthread.o (.text.pthread_setcancelstate)
-                  00008bca    00000002     --HOLE-- [fill = 0]
-                  00008bcc    00000058     driverlib.a : dl_mcan.o (.text.DL_MCAN_lpbkModeEnable)
-                  00008c24    00000058     libclang_rt.builtins.a : clzsi2.c.obj (.text.__clzsi2)
-                  00008c7c    00000058     main_freertos.o (.text.main)
-                  00008cd4    00000054     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : aeabi_portable.o (.text.__aeabi_errno_addr)
-                  00008d28    00000054                                                       : port.o (.text.vPortSetupTimerInterrupt)
-                  00008d7c    00000050     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_readReceiveFifo)
-                  00008dcc    00000050     MLX90640_Process.o (.text.MLX90640_ReadTemperatures)
-                  00008e1c    00000050     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.prvCheckTasksWaitingTermination)
-                  00008e6c    00000050                                                       : tasks.o (.text.prvDeleteTCB)
-                  00008ebc    00000050                                                       : tasks.o (.text.vTaskSetThreadLocalStoragePointer)
-                  00008f0c    0000004c     driverlib.a : dl_dma.o (.text.DL_DMA_initChannel)
-                  00008f58    0000004c     MLX90640_Process.o (.text.MLX90640_Init)
-                  00008fa4    0000004c     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_init)
-                  00008ff0    0000004c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.pvTaskGetThreadLocalStoragePointer)
-                  0000903c    0000004c                                                       : port.o (.text.pxPortInitialiseStack)
-                  00009088    0000004a                                                       : memory.o (.text.malloc)
-                  000090d2    00000002     --HOLE-- [fill = 0]
-                  000090d4    00000048     driverlib.a : dl_uart.o (.text.DL_UART_init)
-                  0000911c    00000048     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : list.o (.text.uxListRemove)
-                  00009164    00000046     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_put)
-                  000091aa    00000046     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.prvInitialiseNewQueue)
-                  000091f0    00000044     driverlib.a : dl_mcan.o (.text.DL_MCAN_getRevisionId)
-                  00009234    00000044     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_create)
-                  00009278    00000008     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text.__aeabi_memcpy)
-                  00009280    00000044     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.PendSV_Handler)
-                  000092c4    00000044                                                       : queue.o (.text.prvCopyDataFromQueue)
-                  00009308    00000044                                                       : tasks.o (.text.vTaskPlaceOnEventListRestricted)
-                  0000934c    00000042     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_get)
-                  0000938e    00000002     --HOLE-- [fill = 0]
-                  00009390    00000040     MLX90640_API.o (.text.MLX90640_SetRefreshRate)
-                  000093d0    00000040     MLX90640_API.o (.text.MLX90640_SetResolution)
-                  00009410    00000040     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : SemaphoreP_freertos.o (.text.SemaphoreP_constructBinary)
-                  00009450    00000040     libclang_rt.builtins.a : aeabi_uidivmod.S.obj (.text.__aeabi_uidivmod)
-                  00009490    00000040                            : extendsfdf2.S.obj (.text.__extendsfdf2)
-                  000094d0    00000040     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.xPortStartScheduler)
-                  00009510    0000003e     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_putAdvance)
-                  0000954e    0000003e                                : UART.o (.text.UART_writeFullFeatured)
-                  0000958c    0000003c     driverlib.a : dl_i2c.o (.text.DL_I2C_flushControllerTXFIFO)
-                  000095c8    0000003c     libclang_rt.builtins.a : floatsisf.S.obj (.text.__floatsisf)
-                  00009604    0000003c                            : comparesf2.S.obj (.text.__gtsf2)
-                  00009640    0000003c     i2ccontroller.o (.text.mainThread)
-                  0000967c    0000003c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.text.prvSampleTimeNow)
-                  000096b8    0000003c     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
-                  000096f4    0000003a     libclang_rt.builtins.a : comparesf2.S.obj (.text.__eqsf2)
-                  0000972e    00000002     --HOLE-- [fill = 0]
-                  00009730    0000003a                            : muldsi3.S.obj (.text.__muldsi3)
-                  0000976a    0000003a     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : list.o (.text.vListInsertEnd)
-                  000097a4    00000038                                                       : HwiPMSPM0_freertos.o (.text.HwiP_dispatch)
-                  000097dc    00000038     MLX90640_Process.o (.text.MLX90640_CheckStatus)
-                  00009814    00000038     MLX90640_API.o (.text.MLX90640_SetInterleavedMode)
-                  0000984c    00000038     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_putPointer)
-                  00009884    00000038     ti_msp_dl_config.o (.text.SYSCFG_DL_GPIO_init)
-                  000098bc    00000038     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : SemaphoreP_freertos.o (.text.SemaphoreP_createBinary)
-                  000098f4    00000038                                                       : timers.o (.text.prvGetNextExpireTime)
-                  0000992c    00000038                                                       : tasks.o (.text.xTaskGetApplicationTaskTag)
-                  00009964    00000038                                                       : tasks.o (.text.xTaskGetSchedulerState)
-                  0000999c    00000034     driverlib.a : dl_mcan.o (.text.DL_MCAN_TXBufAddReq)
-                  000099d0    00000034                 : dl_mcan.o (.text.DL_MCAN_setExtIDAndMask)
-                  00009a04    00000034     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_disable)
-                  00009a38    00000034     MLX90640_I2C_MSP.o (.text.MLX90640_I2CInit)
-                  00009a6c    00000034     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_getConsume)
-                  00009aa0    00000034     ti_msp_dl_config.o (.text.SYSCFG_DL_initPower)
-                  00009ad4    00000034     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.__NVIC_DisableIRQ)
-                  00009b08    00000034                                                       : pthread.o (.text.pthread_attr_setschedparam)
-                  00009b3c    00000004     startup_mspm0g350x_ticlang.o (.text.Reset_Handler)
-                  00009b40    00000034     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.vPortStartFirstTask)
-                  00009b74    00000034                                                       : tasks.o (.text.vTaskPlaceOnEventList)
-                  00009ba8    00000034                                                       : tasks.o (.text.vTaskSetApplicationTaskTag)
-                  00009bdc    00000034                                                       : tasks.o (.text.vTaskStepTick)
-                  00009c10    00000032                                                       : queue.o (.text.vQueueDelete)
-                  00009c42    00000002     --HOLE-- [fill = 0]
-                  00009c44    00000030     driverlib.a : dl_i2c.o (.text.DL_I2C_flushControllerRXFIFO)
-                  00009c74    00000030     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_inISR)
-                  00009ca4    00000030                                                       : tasks.o (.text.prvResetNextTaskUnblockTime)
-                  00009cd4    00000030                                                       : port.o (.text.prvTaskExitError)
-                  00009d04    0000002e                                                       : queue.o (.text.prvIsQueueFull)
-                  00009d32    0000002e                                                       : pthread.o (.text.pthread_attr_setdetachstate)
-                  00009d60    0000002c     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_disableChannel)
-                  00009d8c    0000002c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : SemaphoreP_freertos.o (.text.SemaphoreP_post)
-                  00009db8    0000002c                                                       : port.o (.text.SysTick_Handler)
-                  00009de4    0000002c                                                       : HwiPMSPM0_freertos.o (.text.__NVIC_EnableIRQ)
-                  00009e10    0000002c     libclang_rt.builtins.a : floatsidf.S.obj (.text.__floatsidf)
-                  00009e3c    0000002c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text._pthread_cleanup_pop)
-                  00009e68    0000002c                                                       : list.o (.text.vListInitialise)
-                  00009e94    0000002c                                                       : port.o (.text.vPortExitCritical)
-                  00009ec0    0000002a                                                       : queue.o (.text.prvIsQueueEmpty)
-                  00009eea    00000028     drivers_mspm0g1x0x_g3x0x.a : I2C.o (.text.I2C_cancel)
-                  00009f12    00000002     --HOLE-- [fill = 0]
-                  00009f14    00000028     ti_msp_dl_config.o (.text.SYSCFG_DL_init)
-                  00009f3c    00000028     libclang_rt.builtins.a : floatunsisf.S.obj (.text.__floatunsisf)
-                  00009f64    00000028     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.prvGetDisinheritPriorityAfterTimeout)
-                  00009f8c    00000028                                                       : StaticAllocs_freertos.o (.text.vApplicationGetIdleTaskMemory)
-                  00009fb4    00000028                                                       : StaticAllocs_freertos.o (.text.vApplicationGetTimerTaskMemory)
-                  00009fdc    00000028     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noargs)
-                  0000a004    00000026     driverlib.a : dl_i2c.o (.text.DL_I2C_setClockConfig)
-                  0000a02a    00000026     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_getPointer)
-                  0000a050    00000024     driverlib.a : dl_mcan.o (.text.DL_MCAN_setClockConfig)
-                  0000a074    00000024     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_Params_init)
-                  0000a098    00000024                                                       : HwiPMSPM0_freertos.o (.text.HwiP_restore)
-                  0000a0bc    00000024                                                       : PTLS.o (.text.PTLS_taskDeleteHook)
-                  0000a0e0    00000024     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_CLK_init)
-                  0000a104    00000024     libclang_rt.builtins.a : floatunsidf.S.obj (.text.__floatunsidf)
-                  0000a128    00000024                            : muldi3.S.obj (.text.__muldi3)
-                  0000a14c    00000020     startup_mspm0g350x_ticlang.o (.text.HardFault_Handler)
-                  0000a16c    00000020     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_destruct)
-                  0000a18c    00000020                                                       : tasks.o (.text.pvTaskIncrementMutexHeldCount)
-                  0000a1ac    00000020                                                       : tasks.o (.text.vTaskInternalSetTimeOutState)
-                  0000a1cc    0000001e     libclang_rt.builtins.a : ashldi3.S.obj (.text.__ashldi3)
-                  0000a1ea    0000001e     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text._pthread_runStub)
-                  0000a208    0000001e                                                       : timers.o (.text.prvTimerTask)
-                  0000a226    00000002     --HOLE-- [fill = 0]
-                  0000a228    0000001c                                                       : pthread.o (.text.pthread_attr_init)
-                  0000a244    0000001a                                                       : PTLS.o (.text.PTLS_getBuf)
-                  0000a25e    0000001a                                                       : PTLS.o (.text.PTLS_setBuf)
-                  0000a278    00000018     driverlib.a : dl_mcan.o (.text.DL_MCAN_setOpMode)
-                  0000a290    00000018     MLX90640_I2C_MSP.o (.text.MLX90640_SetI2CHandle)
-                  0000a2a8    00000018     startup_mspm0g350x_ticlang.o (.text.prvGetRegistersFromStack)
-                  0000a2c0    00000018     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text.pthread_self)
-                  0000a2d8    00000018                                                       : port.o (.text.vPortEnterCritical)
-                  0000a2f0    00000018                                                       : port.o (.text.vPortYield)
-                  0000a308    00000016                                                       : HwiPMSPM0_freertos.o (.text.HwiP_delete)
-                  0000a31e    00000002     --HOLE-- [fill = 0]
-                  0000a320    00000014     driverlib.a : dl_interrupt.o (.text.DL_Interrupt_unregisterInterrupt)
-                  0000a334    00000014     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_disableInterrupt)
-                  0000a348    00000014                                                       : HwiPMSPM0_freertos.o (.text.HwiP_enableInterrupt)
-                  0000a35c    00000014     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CSupport_controllerFinish)
-                  0000a370    00000014     libclang_rt.builtins.a : aeabi_uldivmod.S.obj (.text.__aeabi_uldivmod)
-                  0000a384    00000014     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : memory.o (.text.aligned_alloc)
-                  0000a398    00000014                                                       : tasks.o (.text.xTaskGetCurrentTaskHandle)
-                  0000a3ac    00000014                                                       : tasks.o (.text.xTaskGetTickCount)
-                  0000a3c0    00000012     driverlib.a : dl_uart.o (.text.DL_UART_setClockConfig)
-                  0000a3d2    00000012     MLX90640_API.o (.text.MLX90640_DumpEE)
-                  0000a3e4    00000012     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text.pthread_attr_setstacksize)
-                  0000a3f6    00000012     libc.a : copy_decompress_none.c.obj (.text:decompress:none)
-                  0000a408    00000010     driverlib.a : dl_mcan.o (.text.DL_MCAN_getOpMode)
-                  0000a418    00000010                 : dl_mcan.o (.text.DL_MCAN_isMemInitDone)
-                  0000a428    00000010     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_getCurrTransferSize)
-                  0000a438    00000010                                : I2C.o (.text.I2C_transfer)
-                  0000a448    00000010     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : SemaphoreP_freertos.o (.text.SemaphoreP_delete)
-                  0000a458    00000010     ti_drivers_config.o (.text.UART0_IRQHandler)
-                  0000a468    00000010     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : memory.o (.text.free)
-                  0000a478    00000010                                                       : tasks.o (.text.vTaskSuspendAll)
-                  0000a488    00000010     libc.a : copy_zero_init.c.obj (.text:decompress:ZI)
-                  0000a498    0000000e     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_construct)
-                  0000a4a6    00000002     --HOLE-- [fill = 0]
-                  0000a4a8    0000000e     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memset)
-                  0000a4b6    0000000e     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : list.o (.text.vListInitialiseItem)
-                  0000a4c4    0000000c     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_blockingCallback)
-                  0000a4d0    0000000c                                : I2C.o (.text.I2C_Params_init)
-                  0000a4dc    0000000c     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memclr)
-                  0000a4e8    0000000c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : memory.o (.text.memalign)
-                  0000a4f4    0000000c                                                       : memory.o (.text.realloc)
-                  0000a500    0000000c                                                       : tasks.o (.text.vTaskMissedYield)
-                  0000a50c    0000000a     driverlib.a : dl_common.o (.text.DL_Common_delayCycles)
-                  0000a516    0000000a     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_0)
-                  0000a520    00000010     libclang_rt.builtins.a : muldf3.S.obj (.tramp.__aeabi_dmul.1)
-                  0000a530    0000000a     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_1)
-                  0000a53a    0000000a            : e_pow.c.obj (.text.OUTLINED_FUNCTION_6)
-                  0000a544    00000008            : e_pow.c.obj (.text.OUTLINED_FUNCTION_2)
-                  0000a54c    00000010     libclang_rt.builtins.a : adddf3.S.obj (.tramp.__aeabi_dsub.1)
-                  0000a55c    00000008     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.ulSetInterruptMaskFromISR)
-                  0000a564    00000006                                                       : ClockP_freertos.o (.text.ClockP_getSystemTickPeriod)
-                  0000a56a    00000006     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_3)
-                  0000a570    00000010     libclang_rt.builtins.a : adddf3.S.obj (.tramp.__aeabi_dadd.1)
-                  0000a580    00000006     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_4)
-                  0000a586    00000006            : e_pow.c.obj (.text.OUTLINED_FUNCTION_5)
-                  0000a58c    00000006     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.vClearInterruptMaskFromISR)
-                  0000a592    00000006     libc.a : exit.c.obj (.text:abort)
-                  0000a598    00000004            : e_pow.c.obj (.text.OUTLINED_FUNCTION_10)
-                  0000a59c    00000004            : e_pow.c.obj (.text.OUTLINED_FUNCTION_7)
-                  0000a5a0    00000004            : e_pow.c.obj (.text.OUTLINED_FUNCTION_8)
-                  0000a5a4    00000004            : e_pow.c.obj (.text.OUTLINED_FUNCTION_9)
-                  0000a5a8    00000004            : pre_init.c.obj (.text._system_pre_init)
-                  0000a5ac    00000004     main_freertos.o (.text.vApplicationStackOverflowHook)
+.text      0    000000c0    0000a600     
+                  000000c0    00000a70     libc.a : e_pow.c.obj (.text.pow)
+                  00000b30    00000620     MLX90640_API.o (.text.MLX90640_CalculateTo)
+                  00001150    0000053c     MLX90640_API.o (.text.ExtractAlphaParameters)
+                  0000168c    000004f8     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_interruptHandler)
+                  00001b84    000004b0     MLX90640_API.o (.text.ExtractOffsetParameters)
+                  00002034    00000278     MLX90640_API.o (.text.ExtractKvPixelParameters)
+                  000022ac    00000238     MLX90640_API.o (.text.ExtractKtaPixelParameters)
+                  000024e4    0000021c     MLX90640_API.o (.text.MLX90640_ExtractParameters)
+                  00002700    00000214     driverlib.a : dl_mcan.o (.text.DL_MCAN_msgRAMConfig)
+                  00002914    00000210     drivers_mspm0g1x0x_g3x0x.a : GPIOMSPM0.o (.text.GPIO_setConfigAndMux)
+                  00002b24    000001f4                                : I2CMSPM0.o (.text.I2C_open)
+                  00002d18    000001ec     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueSemaphoreTake)
+                  00002f04    000001dc     MLX90640_API.o (.text.ExtractDeviatingPixels)
+                  000030e0    000001dc     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_hwiFxn)
+                  000032bc    000001d2     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGenericSend)
+                  0000348e    00000002     startup_mspm0g350x_ticlang.o (.text.Default_Handler)
+                  00003490    000001c0     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : heap_4.o (.text.pvPortMalloc)
+                  00003650    000001b8     MLX90640_API.o (.text.MLX90640_GetFrameData)
+                  00003808    000001a8     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_enable)
+                  000039b0    000001a4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueReceive)
+                  00003b54    00000194     MLX90640_API.o (.text.ExtractCPParameters)
+                  00003ce8    00000192     libclang_rt.builtins.a : adddf3.S.obj (.text.adddf3_subdf3)
+                  00003e7a    00000002     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CSupport_powerRelConstraint)
+                  00003e7c    00000188     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.vPortSuppressTicksAndSleep)
+                  00004004    00000184     libc.a : e_sqrt.c.obj (.text.sqrt)
+                  00004188    00000180     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_hwiFxn)
+                  00004308    00000164     MLX90640_I2C_MSP.o (.text.MLX90640_I2CRead)
+                  0000446c    00000158     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskIncrementTick)
+                  000045c4    00000154                                                       : timers.o (.text.prvProcessReceivedCommands)
+                  00004718    0000014c                                                       : pthread.o (.text.pthread_create)
+                  00004864    00000134                                                       : tasks.o (.text.xTaskResumeAll)
+                  00004998    0000012c     drivers_mspm0g1x0x_g3x0x.a : I2C.o (.text.I2C_transferTimeout)
+                  00004ac4    00000120     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGenericSendFromISR)
+                  00004be4    0000011c                                                       : tasks.o (.text.prvInitialiseNewTask)
+                  00004d00    0000011a     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_getn)
+                  00004e1a    00000116                                : RingBuf.o (.text.RingBuf_putn)
+                  00004f30    00000110     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.vTaskSuspend)
+                  00005040    0000010c     libclang_rt.builtins.a : divdf3.S.obj (.text.__divdf3)
+                  0000514c    00000108     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_primeWriteBurst)
+                  00005254    00000100     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.vTaskPriorityDisinheritAfterTimeout)
+                  00005354    000000fc     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_dmaRx)
+                  00005450    000000f8                                : GPIOMSPM0.o (.text.GPIO_hwiIntFxn)
+                  00005548    000000f8     MLX90640_Process.o (.text.MLX90640_DataProcessing)
+                  00005640    000000f6     drivers_mspm0g1x0x_g3x0x.a : UART.o (.text.UART_readFullFeatured)
+                  00005736    00000002                                : I2CMSPM0.o (.text.I2CSupport_powerSetConstraint)
+                  00005738    000000f4     driverlib.a : dl_mcan.o (.text.DL_MCAN_writeMsgRam)
+                  0000582c    000000f4     MLX90640_API.o (.text.ExtractKsToParameters)
+                  00005920    000000f4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGiveFromISR)
+                  00005a14    000000ec     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_primeReadBurst)
+                  00005b00    000000ec     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.vTaskSwitchContext)
+                  00005bec    000000ec                                                       : queue.o (.text.xQueueReceiveFromISR)
+                  00005cd8    000000e8                                                       : tasks.o (.text.vTaskDelete)
+                  00005dc0    000000e4     driverlib.a : dl_mcan.o (.text.DL_MCAN_config)
+                  00005ea4    000000e4     MLX90640_API.o (.text.MLX90640_GetTa)
+                  00005f88    000000e4     libclang_rt.builtins.a : muldf3.S.obj (.text.__muldf3)
+                  0000606c    000000e4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskPriorityInherit)
+                  00006150    000000e0                                                       : tasks.o (.text.prvAddNewTaskToReadyList)
+                  00006230    000000dc     driverlib.a : dl_mcan.o (.text.DL_MCAN_init)
+                  0000630c    000000dc                 : dl_sysctl_mspm0g1x0x_g3x0x.o (.text.DL_SYSCTL_configSYSPLL)
+                  000063e8    000000dc     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_init)
+                  000064c4    000000dc     ti_msp_dl_config.o (.text.SYSCFG_DL_MCAN0_init)
+                  000065a0    000000d8     driverlib.a : dl_mcan.o (.text.DL_MCAN_setBitTime)
+                  00006678    000000d8     libc.a : s_scalbn.c.obj (.text.scalbn)
+                  00006750    000000d8     libclang_rt.builtins.a : addsf3.S.obj (.text)
+                  00006828    000000d4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.prvCopyDataToQueue)
+                  000068fc    000000c4                                                       : tasks.o (.text.xTaskPriorityDisinherit)
+                  000069c0    000000c0     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_open)
+                  00006a80    000000c0     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGenericCreateStatic)
+                  00006b40    000000bc                                                       : HwiPMSPM0_freertos.o (.text.HwiP_construct)
+                  00006bfc    000000bc                                                       : heap_4.o (.text.prvInsertBlockIntoFreeList)
+                  00006cb8    000000bc                                                       : tasks.o (.text.vTaskStartScheduler)
+                  00006d74    000000b6                                                       : queue.o (.text.prvUnlockQueue)
+                  00006e2a    00000002     drivers_mspm0g1x0x_g3x0x.a : I2C.o (.text.I2C_init)
+                  00006e2c    000000b4     MLX90640_I2C_MSP.o (.text.MLX90640_I2CWrite)
+                  00006ee0    000000b4     drivers_mspm0g1x0x_g3x0x.a : UART.o (.text.UART_writeCallback)
+                  00006f94    000000b4     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskCheckForTimeOut)
+                  00007048    000000b0                                                       : tasks.o (.text.prvAddCurrentTaskToDelayedList)
+                  000070f8    000000b0                                                       : heap_4.o (.text.prvHeapInit)
+                  000071a8    000000b0                                                       : timers.o (.text.prvSwitchTimerLists)
+                  00007258    000000b0                                                       : tasks.o (.text.xTaskRemoveFromEventList)
+                  00007308    000000ac     drivers_mspm0g1x0x_g3x0x.a : GPIOMSPM0.o (.text.GPIO_setInterruptConfig)
+                  000073b4    000000ac     MLX90640_API.o (.text.MLX90640_GetVdd)
+                  00007460    000000aa     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.xQueueGenericCreate)
+                  0000750a    00000002                                                       : port.o (.text.SVC_Handler)
+                  0000750c    000000a8     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMA_Init)
+                  000075b4    000000a8     ti_msp_dl_config.o (.text.SYSCFG_DL_I2C_0_init)
+                  0000765c    000000a4     MAS_CAN.o (.text.CAN_transfer)
+                  00007700    000000a4     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_txChar)
+                  000077a4    000000a2     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
+                  00007846    00000002     ti_drivers_config.o (.text.UARTMSP_eventCallback)
+                  00007848    000000a0     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : heap_4.o (.text.vPortFree)
+                  000078e8    000000a0                                                       : queue.o (.text.xQueueGenericReset)
+                  00007988    0000009c     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_completeTransfer)
+                  00007a24    0000009a     libc.a : memcpy16.S.obj (.text:memcpy)
+                  00007abe    00000098     drivers_mspm0g1x0x_g3x0x.a : UART.o (.text.UART_writeBuffered)
+                  00007b56    00000094     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.xTaskCreateStatic)
+                  00007bea    00000092                                                       : tasks.o (.text.xTaskCreate)
+                  00007c7c    00000090     driverlib.a : dl_interrupt.o (.text.DL_Interrupt_registerInterrupt)
+                  00007d0c    00000090     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_setupTransfer)
+                  00007d9c    00000090     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.text.xTimerGenericCommand)
+                  00007e2c    0000008c     libclang_rt.builtins.a : mulsf3.S.obj (.text.__mulsf3)
+                  00007eb8    0000008c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.text.prvProcessTimerOrBlockTask)
+                  00007f44    0000008c                                                       : pthread.o (.text.removeThreadKeys)
+                  00007fd0    0000008a                                                       : SemaphoreP_freertos.o (.text.SemaphoreP_pend)
+                  0000805a    00000002     libclang_rt.builtins.a : aeabi_div0.c.obj (.text.__aeabi_idiv0)
+                  0000805c    00000088     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_close)
+                  000080e4    00000084     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.__NVIC_SetPriority)
+                  00008168    00000084                                                       : timers.o (.text.prvInsertTimerInActiveList)
+                  000081ec    00000082     libclang_rt.builtins.a : divsf3.S.obj (.text.__divsf3)
+                  0000826e    00000002                            : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
+                  00008270    00000080     driverlib.a : dl_uart.o (.text.DL_UART_configBaudRate)
+                  000082f0    0000007c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : memory.o (.text.calloc)
+                  0000836c    0000007c                                                       : tasks.o (.text.eTaskConfirmSleepModeStatus)
+                  000083e8    0000007c                                                       : tasks.o (.text.prvInitialiseTaskLists)
+                  00008464    0000007c                                                       : timers.o (.text.prvProcessExpiredTimer)
+                  000084e0    0000007c                                                       : timers.o (.text.xTimerCreateTimerTask)
+                  0000855c    00000078     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_enableInts)
+                  000085d4    00000078     libc.a : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  0000864c    00000074     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CSupport_primeTransfer)
+                  000086c0    00000074     libclang_rt.builtins.a : truncdfsf2.S.obj (.text.__truncdfsf2)
+                  00008734    00000074     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.prvGetExpectedIdleTime)
+                  000087a8    00000070     libclang_rt.builtins.a : comparedf2.c.obj (.text.__gedf2)
+                  00008818    0000006e     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text.pthread_exit)
+                  00008886    00000002     --HOLE-- [fill = 0]
+                  00008888    0000006c     libclang_rt.builtins.a : comparedf2.c.obj (.text.__ledf2)
+                  000088f4    0000006c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.text.prvCheckForValidListAndQueue)
+                  00008960    0000006c                                                       : list.o (.text.vListInsert)
+                  000089cc    0000006a                                                       : queue.o (.text.vQueueWaitForMessageRestricted)
+                  00008a36    00000002     --HOLE-- [fill = 0]
+                  00008a38    00000068     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.text.UARTMSP_disable)
+                  00008aa0    00000062     libclang_rt.builtins.a : aeabi_dcmp.S.obj (.text.__aeabi_dcmp)
+                  00008b02    00000002     --HOLE-- [fill = 0]
+                  00008b04    00000062                            : aeabi_fcmp.S.obj (.text.__aeabi_fcmp)
+                  00008b66    00000062     libc.a : memset16.S.obj (.text:memset)
+                  00008bc8    0000005e     driverlib.a : dl_i2c.o (.text.DL_I2C_fillControllerTXFIFO)
+                  00008c26    00000002     --HOLE-- [fill = 0]
+                  00008c28    0000005c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.prvIdleTask)
+                  00008c84    0000005a                                                       : pthread.o (.text.pthread_setcancelstate)
+                  00008cde    00000002     --HOLE-- [fill = 0]
+                  00008ce0    00000058     driverlib.a : dl_mcan.o (.text.DL_MCAN_lpbkModeEnable)
+                  00008d38    00000058     libclang_rt.builtins.a : clzsi2.c.obj (.text.__clzsi2)
+                  00008d90    00000058     main_freertos.o (.text.main)
+                  00008de8    00000054     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : aeabi_portable.o (.text.__aeabi_errno_addr)
+                  00008e3c    00000054                                                       : port.o (.text.vPortSetupTimerInterrupt)
+                  00008e90    00000050     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_readReceiveFifo)
+                  00008ee0    00000050     MLX90640_Process.o (.text.MLX90640_ReadTemperatures)
+                  00008f30    00000050     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.prvCheckTasksWaitingTermination)
+                  00008f80    00000050                                                       : tasks.o (.text.prvDeleteTCB)
+                  00008fd0    00000050                                                       : tasks.o (.text.vTaskSetThreadLocalStoragePointer)
+                  00009020    0000004c     driverlib.a : dl_dma.o (.text.DL_DMA_initChannel)
+                  0000906c    0000004c     MLX90640_Process.o (.text.MLX90640_Init)
+                  000090b8    0000004c     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_init)
+                  00009104    0000004c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.text.pvTaskGetThreadLocalStoragePointer)
+                  00009150    0000004c                                                       : port.o (.text.pxPortInitialiseStack)
+                  0000919c    0000004a                                                       : memory.o (.text.malloc)
+                  000091e6    00000002     --HOLE-- [fill = 0]
+                  000091e8    00000048     driverlib.a : dl_uart.o (.text.DL_UART_init)
+                  00009230    00000048     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : list.o (.text.uxListRemove)
+                  00009278    00000046     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_put)
+                  000092be    00000046     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.prvInitialiseNewQueue)
+                  00009304    00000044     driverlib.a : dl_mcan.o (.text.DL_MCAN_getRevisionId)
+                  00009348    00000044     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_create)
+                  0000938c    00000004     libc.a : pre_init.c.obj (.text._system_pre_init)
+                  00009390    00000044     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.PendSV_Handler)
+                  000093d4    00000044                                                       : queue.o (.text.prvCopyDataFromQueue)
+                  00009418    00000044                                                       : tasks.o (.text.vTaskPlaceOnEventListRestricted)
+                  0000945c    00000042     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_get)
+                  0000949e    00000002     --HOLE-- [fill = 0]
+                  000094a0    00000040     MLX90640_API.o (.text.MLX90640_SetRefreshRate)
+                  000094e0    00000040     MLX90640_API.o (.text.MLX90640_SetResolution)
+                  00009520    00000040     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : SemaphoreP_freertos.o (.text.SemaphoreP_constructBinary)
+                  00009560    00000040     libclang_rt.builtins.a : aeabi_uidivmod.S.obj (.text.__aeabi_uidivmod)
+                  000095a0    00000040                            : extendsfdf2.S.obj (.text.__extendsfdf2)
+                  000095e0    00000040     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.xPortStartScheduler)
+                  00009620    0000003e     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_putAdvance)
+                  0000965e    0000003e                                : UART.o (.text.UART_writeFullFeatured)
+                  0000969c    0000003c     driverlib.a : dl_i2c.o (.text.DL_I2C_flushControllerTXFIFO)
+                  000096d8    0000003c     libclang_rt.builtins.a : floatsisf.S.obj (.text.__floatsisf)
+                  00009714    0000003c                            : comparesf2.S.obj (.text.__gtsf2)
+                  00009750    0000003c     i2ccontroller.o (.text.mainThread)
+                  0000978c    0000003c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.text.prvSampleTimeNow)
+                  000097c8    0000003c     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  00009804    0000003a     libclang_rt.builtins.a : comparesf2.S.obj (.text.__eqsf2)
+                  0000983e    00000002     --HOLE-- [fill = 0]
+                  00009840    0000003a                            : muldsi3.S.obj (.text.__muldsi3)
+                  0000987a    0000003a     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : list.o (.text.vListInsertEnd)
+                  000098b4    00000038                                                       : HwiPMSPM0_freertos.o (.text.HwiP_dispatch)
+                  000098ec    00000038     MLX90640_Process.o (.text.MLX90640_CheckStatus)
+                  00009924    00000038     MLX90640_API.o (.text.MLX90640_SetInterleavedMode)
+                  0000995c    00000038     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_putPointer)
+                  00009994    00000038     ti_msp_dl_config.o (.text.SYSCFG_DL_GPIO_init)
+                  000099cc    00000038     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : SemaphoreP_freertos.o (.text.SemaphoreP_createBinary)
+                  00009a04    00000038                                                       : timers.o (.text.prvGetNextExpireTime)
+                  00009a3c    00000038                                                       : tasks.o (.text.xTaskGetApplicationTaskTag)
+                  00009a74    00000038                                                       : tasks.o (.text.xTaskGetSchedulerState)
+                  00009aac    00000034     driverlib.a : dl_mcan.o (.text.DL_MCAN_TXBufAddReq)
+                  00009ae0    00000034                 : dl_mcan.o (.text.DL_MCAN_setExtIDAndMask)
+                  00009b14    00000034     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_disable)
+                  00009b48    00000034     MLX90640_I2C_MSP.o (.text.MLX90640_I2CInit)
+                  00009b7c    00000034     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_getConsume)
+                  00009bb0    00000034     ti_msp_dl_config.o (.text.SYSCFG_DL_initPower)
+                  00009be4    00000034     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.__NVIC_DisableIRQ)
+                  00009c18    00000034                                                       : pthread.o (.text.pthread_attr_setschedparam)
+                  00009c4c    00000004     startup_mspm0g350x_ticlang.o (.text.Reset_Handler)
+                  00009c50    00000034     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.vPortStartFirstTask)
+                  00009c84    00000034                                                       : tasks.o (.text.vTaskPlaceOnEventList)
+                  00009cb8    00000034                                                       : tasks.o (.text.vTaskSetApplicationTaskTag)
+                  00009cec    00000034                                                       : tasks.o (.text.vTaskStepTick)
+                  00009d20    00000032                                                       : queue.o (.text.vQueueDelete)
+                  00009d52    00000002     --HOLE-- [fill = 0]
+                  00009d54    00000030     driverlib.a : dl_i2c.o (.text.DL_I2C_flushControllerRXFIFO)
+                  00009d84    00000030     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_inISR)
+                  00009db4    00000030                                                       : tasks.o (.text.prvResetNextTaskUnblockTime)
+                  00009de4    00000030                                                       : port.o (.text.prvTaskExitError)
+                  00009e14    0000002e                                                       : queue.o (.text.prvIsQueueFull)
+                  00009e42    0000002e                                                       : pthread.o (.text.pthread_attr_setdetachstate)
+                  00009e70    0000002c     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_disableChannel)
+                  00009e9c    0000002c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : SemaphoreP_freertos.o (.text.SemaphoreP_post)
+                  00009ec8    0000002c                                                       : port.o (.text.SysTick_Handler)
+                  00009ef4    0000002c                                                       : HwiPMSPM0_freertos.o (.text.__NVIC_EnableIRQ)
+                  00009f20    0000002c     libclang_rt.builtins.a : floatsidf.S.obj (.text.__floatsidf)
+                  00009f4c    0000002c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text._pthread_cleanup_pop)
+                  00009f78    0000002c                                                       : list.o (.text.vListInitialise)
+                  00009fa4    0000002c                                                       : port.o (.text.vPortExitCritical)
+                  00009fd0    0000002a                                                       : queue.o (.text.prvIsQueueEmpty)
+                  00009ffa    00000028     drivers_mspm0g1x0x_g3x0x.a : I2C.o (.text.I2C_cancel)
+                  0000a022    00000002     --HOLE-- [fill = 0]
+                  0000a024    00000028     ti_msp_dl_config.o (.text.SYSCFG_DL_init)
+                  0000a04c    00000028     libclang_rt.builtins.a : floatunsisf.S.obj (.text.__floatunsisf)
+                  0000a074    00000028     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : queue.o (.text.prvGetDisinheritPriorityAfterTimeout)
+                  0000a09c    00000028                                                       : StaticAllocs_freertos.o (.text.vApplicationGetIdleTaskMemory)
+                  0000a0c4    00000028                                                       : StaticAllocs_freertos.o (.text.vApplicationGetTimerTaskMemory)
+                  0000a0ec    00000028     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noargs)
+                  0000a114    00000026     driverlib.a : dl_i2c.o (.text.DL_I2C_setClockConfig)
+                  0000a13a    00000026     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_getPointer)
+                  0000a160    00000024     driverlib.a : dl_mcan.o (.text.DL_MCAN_setClockConfig)
+                  0000a184    00000024     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_Params_init)
+                  0000a1a8    00000024                                                       : HwiPMSPM0_freertos.o (.text.HwiP_restore)
+                  0000a1cc    00000024                                                       : PTLS.o (.text.PTLS_taskDeleteHook)
+                  0000a1f0    00000024     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_CLK_init)
+                  0000a214    00000024     libclang_rt.builtins.a : floatunsidf.S.obj (.text.__floatunsidf)
+                  0000a238    00000024                            : muldi3.S.obj (.text.__muldi3)
+                  0000a25c    00000020     startup_mspm0g350x_ticlang.o (.text.HardFault_Handler)
+                  0000a27c    00000020     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_destruct)
+                  0000a29c    00000020                                                       : tasks.o (.text.pvTaskIncrementMutexHeldCount)
+                  0000a2bc    00000020                                                       : tasks.o (.text.vTaskInternalSetTimeOutState)
+                  0000a2dc    0000001e     libclang_rt.builtins.a : ashldi3.S.obj (.text.__ashldi3)
+                  0000a2fa    0000001e     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text._pthread_runStub)
+                  0000a318    0000001e                                                       : timers.o (.text.prvTimerTask)
+                  0000a336    00000002     --HOLE-- [fill = 0]
+                  0000a338    0000001c                                                       : pthread.o (.text.pthread_attr_init)
+                  0000a354    0000001a                                                       : PTLS.o (.text.PTLS_getBuf)
+                  0000a36e    0000001a                                                       : PTLS.o (.text.PTLS_setBuf)
+                  0000a388    00000018     driverlib.a : dl_mcan.o (.text.DL_MCAN_setOpMode)
+                  0000a3a0    00000018     MLX90640_I2C_MSP.o (.text.MLX90640_SetI2CHandle)
+                  0000a3b8    00000018     startup_mspm0g350x_ticlang.o (.text.prvGetRegistersFromStack)
+                  0000a3d0    00000018     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text.pthread_self)
+                  0000a3e8    00000018                                                       : port.o (.text.vPortEnterCritical)
+                  0000a400    00000018                                                       : port.o (.text.vPortYield)
+                  0000a418    00000016                                                       : HwiPMSPM0_freertos.o (.text.HwiP_delete)
+                  0000a42e    00000002     --HOLE-- [fill = 0]
+                  0000a430    00000014     driverlib.a : dl_interrupt.o (.text.DL_Interrupt_unregisterInterrupt)
+                  0000a444    00000014     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : HwiPMSPM0_freertos.o (.text.HwiP_disableInterrupt)
+                  0000a458    00000014                                                       : HwiPMSPM0_freertos.o (.text.HwiP_enableInterrupt)
+                  0000a46c    00000014     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CSupport_controllerFinish)
+                  0000a480    00000014     libclang_rt.builtins.a : aeabi_uldivmod.S.obj (.text.__aeabi_uldivmod)
+                  0000a494    00000014     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : memory.o (.text.aligned_alloc)
+                  0000a4a8    00000014                                                       : tasks.o (.text.xTaskGetCurrentTaskHandle)
+                  0000a4bc    00000014                                                       : tasks.o (.text.xTaskGetTickCount)
+                  0000a4d0    00000012     driverlib.a : dl_uart.o (.text.DL_UART_setClockConfig)
+                  0000a4e2    00000012     MLX90640_API.o (.text.MLX90640_DumpEE)
+                  0000a4f4    00000012     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : pthread.o (.text.pthread_attr_setstacksize)
+                  0000a506    00000012     libc.a : copy_decompress_none.c.obj (.text:decompress:none)
+                  0000a518    00000010     driverlib.a : dl_mcan.o (.text.DL_MCAN_getOpMode)
+                  0000a528    00000010                 : dl_mcan.o (.text.DL_MCAN_isMemInitDone)
+                  0000a538    00000010     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.text.DMAMSPM0_getCurrTransferSize)
+                  0000a548    00000010                                : I2C.o (.text.I2C_transfer)
+                  0000a558    00000010     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : SemaphoreP_freertos.o (.text.SemaphoreP_delete)
+                  0000a568    00000010     ti_drivers_config.o (.text.UART0_IRQHandler)
+                  0000a578    00000010     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : memory.o (.text.free)
+                  0000a588    00000010                                                       : tasks.o (.text.vTaskSuspendAll)
+                  0000a598    00000010     libc.a : copy_zero_init.c.obj (.text:decompress:ZI)
+                  0000a5a8    0000000e     drivers_mspm0g1x0x_g3x0x.a : RingBuf.o (.text.RingBuf_construct)
+                  0000a5b6    00000002     --HOLE-- [fill = 0]
+                  0000a5b8    0000000e     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memset)
+                  0000a5c6    0000000e     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : list.o (.text.vListInitialiseItem)
+                  0000a5d4    0000000c     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.text.I2CMSPM0_blockingCallback)
+                  0000a5e0    0000000c                                : I2C.o (.text.I2C_Params_init)
+                  0000a5ec    0000000c     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memclr)
+                  0000a5f8    0000000c     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : memory.o (.text.memalign)
+                  0000a604    0000000c                                                       : memory.o (.text.realloc)
+                  0000a610    0000000c                                                       : tasks.o (.text.vTaskMissedYield)
+                  0000a61c    0000000a     driverlib.a : dl_common.o (.text.DL_Common_delayCycles)
+                  0000a626    0000000a     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_0)
+                  0000a630    00000010     libclang_rt.builtins.a : muldf3.S.obj (.tramp.__aeabi_dmul.1)
+                  0000a640    0000000a     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_1)
+                  0000a64a    00000008            : e_pow.c.obj (.text.OUTLINED_FUNCTION_2)
+                  0000a652    00000002     --HOLE-- [fill = 0]
+                  0000a654    00000010     libclang_rt.builtins.a : adddf3.S.obj (.tramp.__aeabi_dsub.1)
+                  0000a664    00000008                            : aeabi_memcpy.S.obj (.text.__aeabi_memcpy)
+                  0000a66c    00000008     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.ulSetInterruptMaskFromISR)
+                  0000a674    00000006                                                       : ClockP_freertos.o (.text.ClockP_getSystemTickPeriod)
+                  0000a67a    00000006     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_3)
+                  0000a680    00000006            : e_pow.c.obj (.text.OUTLINED_FUNCTION_5)
+                  0000a686    00000002     --HOLE-- [fill = 0]
+                  0000a688    00000010     libclang_rt.builtins.a : adddf3.S.obj (.tramp.__aeabi_dadd.1)
+                  0000a698    00000006     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_6)
+                  0000a69e    00000006     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : port.o (.text.vClearInterruptMaskFromISR)
+                  0000a6a4    00000004     libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_4)
+                  0000a6a8    00000004            : e_pow.c.obj (.text.OUTLINED_FUNCTION_7)
+                  0000a6ac    00000004            : e_pow.c.obj (.text.OUTLINED_FUNCTION_8)
+                  0000a6b0    00000004     main_freertos.o (.text.vApplicationStackOverflowHook)
+                  0000a6b4    00000004     libc.a : exit.c.obj (.text:abort)
+                  0000a6b8    00000008     --HOLE-- [fill = 0]
 
-.cinit     0    0000a870    00000078     
-                  0000a870    0000003f     (.cinit..data.load) [load image, compression = lzss]
-                  0000a8af    00000001     --HOLE-- [fill = 0]
-                  0000a8b0    0000000c     (__TI_handler_table)
-                  0000a8bc    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  0000a8c4    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
-                  0000a8cc    00000018     (__TI_cinit_table)
-                  0000a8e4    00000004     --HOLE-- [fill = 0]
+.cinit     0    0000a980    00000078     
+                  0000a980    00000041     (.cinit..data.load) [load image, compression = lzss]
+                  0000a9c1    00000003     --HOLE-- [fill = 0]
+                  0000a9c4    0000000c     (__TI_handler_table)
+                  0000a9d0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000a9d8    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  0000a9e0    00000018     (__TI_cinit_table)
 
-.rodata    0    0000a5b0    000002c0     
-                  0000a5b0    00000060     ti_msp_dl_config.o (.rodata.gMCAN0MsgRAMConfigParams)
-                  0000a610    00000040     driverlib.a : dl_mcan.o (.rodata..L__const.DL_MCAN_getDataSize.dataSize)
-                  0000a650    00000034     ti_msp_dl_config.o (.rodata.gMCAN0InitParams)
-                  0000a684    00000030     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.rodata.DMA_Ch_defaultParams)
-                  0000a6b4    00000004     ti_msp_dl_config.o (.rodata.gMCAN0ClockConf)
-                  0000a6b8    00000030     libc.a : e_pow.c.obj (.rodata.cst16)
-                  0000a6e8    0000002c     ti_msp_dl_config.o (.rodata.gMCAN0ConfigParams)
-                  0000a714    00000028     ti_msp_dl_config.o (.rodata.gSYSPLLConfig)
-                  0000a73c    00000024     ti_drivers_config.o (.rodata.I2CMSPM0HWAttrs)
-                  0000a760    00000024     ti_drivers_config.o (.rodata.UARTMSPHWAttrs)
-                  0000a784    00000020     drivers_mspm0g1x0x_g3x0x.a : GPIOMSPM0.o (.rodata.cst16)
-                  0000a7a4    00000020     driverlib.a : dl_mcan.o (.rodata.cst32)
-                  0000a7c4    00000020     ti_msp_dl_config.o (.rodata.gMCAN0BitTimes)
-                  0000a7e4    0000001c     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.rodata..Lswitch.table.UARTMSP_enable)
-                  0000a800    00000014                                : UARTMSPM0.o (.rodata.UARTMSPSupportFxns)
-                  0000a814    00000010     ti_drivers_config.o (.rodata.GPIO_config)
-                  0000a824    00000010     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.rodata.cst16)
-                  0000a834    00000008     ti_drivers_config.o (.rodata.DMAMSP0HWAttrs)
-                  0000a83c    00000008     ti_drivers_config.o (.rodata.DMAMSPM0_Config)
-                  0000a844    00000008     ti_drivers_config.o (.rodata.I2C_config)
-                  0000a84c    00000008     ti_drivers_config.o (.rodata.UART_config)
-                  0000a854    00000008     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.rodata.str1.4914255128583115631)
-                  0000a85c    00000005                                                       : tasks.o (.rodata.str1.13152508874643809381)
-                  0000a861    00000002     ti_msp_dl_config.o (.rodata.gI2C_0ClockConfig)
-                  0000a863    00000001     ti_drivers_config.o (.rodata.GPIO_pinLowerBound)
-                  0000a864    00000004     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.rodata.uxTopUsedPriority)
-                  0000a868    00000002                                                       : pthread.o (.rodata.str1.86282903232889483791)
-                  0000a86a    00000001     ti_drivers_config.o (.rodata.GPIO_pinUpperBound)
-                  0000a86b    00000001     ti_drivers_config.o (.rodata.I2C_count)
-                  0000a86c    00000004     --HOLE-- [fill = 0]
+.rodata    0    0000a6c0    000002c0     
+                  0000a6c0    00000060     ti_msp_dl_config.o (.rodata.gMCAN0MsgRAMConfigParams)
+                  0000a720    00000040     driverlib.a : dl_mcan.o (.rodata..L__const.DL_MCAN_getDataSize.dataSize)
+                  0000a760    00000034     ti_msp_dl_config.o (.rodata.gMCAN0InitParams)
+                  0000a794    00000030     drivers_mspm0g1x0x_g3x0x.a : DMAMSPM0.o (.rodata.DMA_Ch_defaultParams)
+                  0000a7c4    00000004     ti_msp_dl_config.o (.rodata.gMCAN0ClockConf)
+                  0000a7c8    00000030     libc.a : e_pow.c.obj (.rodata.cst16)
+                  0000a7f8    0000002c     ti_msp_dl_config.o (.rodata.gMCAN0ConfigParams)
+                  0000a824    00000028     ti_msp_dl_config.o (.rodata.gSYSPLLConfig)
+                  0000a84c    00000024     ti_drivers_config.o (.rodata.I2CMSPM0HWAttrs)
+                  0000a870    00000024     ti_drivers_config.o (.rodata.UARTMSPHWAttrs)
+                  0000a894    00000020     drivers_mspm0g1x0x_g3x0x.a : GPIOMSPM0.o (.rodata.cst16)
+                  0000a8b4    00000020     driverlib.a : dl_mcan.o (.rodata.cst32)
+                  0000a8d4    00000020     ti_msp_dl_config.o (.rodata.gMCAN0BitTimes)
+                  0000a8f4    0000001c     drivers_mspm0g1x0x_g3x0x.a : UARTMSPM0.o (.rodata..Lswitch.table.UARTMSP_enable)
+                  0000a910    00000014                                : UARTMSPM0.o (.rodata.UARTMSPSupportFxns)
+                  0000a924    00000010     ti_drivers_config.o (.rodata.GPIO_config)
+                  0000a934    00000010     drivers_mspm0g1x0x_g3x0x.a : I2CMSPM0.o (.rodata.cst16)
+                  0000a944    00000008     ti_drivers_config.o (.rodata.DMAMSP0HWAttrs)
+                  0000a94c    00000008     ti_drivers_config.o (.rodata.DMAMSPM0_Config)
+                  0000a954    00000008     ti_drivers_config.o (.rodata.I2C_config)
+                  0000a95c    00000008     ti_drivers_config.o (.rodata.UART_config)
+                  0000a964    00000008     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : timers.o (.rodata.str1.170259147626650677041)
+                  0000a96c    00000005                                                       : tasks.o (.rodata.str1.97035833999922588211)
+                  0000a971    00000002     ti_msp_dl_config.o (.rodata.gI2C_0ClockConfig)
+                  0000a973    00000001     ti_drivers_config.o (.rodata.GPIO_pinLowerBound)
+                  0000a974    00000004     freertos_builds_LP_MSPM0G3507_release_ticlang.lib : tasks.o (.rodata.uxTopUsedPriority)
+                  0000a978    00000002                                                       : pthread.o (.rodata.str1.116794043260051476961)
+                  0000a97a    00000001     ti_drivers_config.o (.rodata.GPIO_pinUpperBound)
+                  0000a97b    00000001     ti_drivers_config.o (.rodata.I2C_count)
+                  0000a97c    00000004     --HOLE-- [fill = 0]
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
@@ -507,45 +506,80 @@ MODULE SUMMARY
 
        Module                         code    ro data   rw data
        ------                         ----    -------   -------
-    ./
+    .\
        MLX90640_Process.o             460     0         12529  
-       MLX90640_API.o                 7838    0         0      
+       MLX90640_API.o                 8014    0         0      
        i2ccontroller.o                60      0         3072   
        ti_drivers_config.o            18      123       1168   
        ti_msp_dl_config.o             648     270       152    
-       MLX90640_I2C_MSP.o             564     0         23     
-       MAS_CAN.o                      180     0         17     
+       MLX90640_I2C_MSP.o             612     0         23     
+       MAS_CAN.o                      164     0         17     
        main_freertos.o                92      0         0      
     +--+------------------------------+-------+---------+---------+
-       Total:                         9860    393       16961  
+       Total:                         10068   393       16961  
                                                                
-    ./freertos/ticlang/
+    .\freertos\ticlang\
        startup_mspm0g350x_ticlang.o   62      192       0      
     +--+------------------------------+-------+---------+---------+
        Total:                         62      192       0      
                                                                
-    /Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_4.0.2.LTS/lib/armv6m-ti-none-eabi/c/libc.a
-       e_pow.c.obj                    2704    48        0      
-       e_sqrt.c.obj                   368     0         0      
+    C:/Users/krisz/workspace_v12/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug/freertos_builds_LP_MSPM0G3507_release_ticlang.lib
+       tasks.o                        4882    9         360    
+       heap_4.o                       972     0         3104   
+       queue.o                        3484    0         0      
+       timers.o                       1434    8         380    
+       StaticAllocs_freertos.o        80      0         1224   
+       HwiPMSPM0_freertos.o           806     0         196    
+       port.o                         936     0         16     
+       pthread.o                      914     2         20     
+       SemaphoreP_freertos.o          318     0         0      
+       list.o                         296     0         0      
+       memory.o                       258     0         0      
+       PTLS.o                         88      0         0      
+       aeabi_portable.o               84      0         4      
+       ClockP_freertos.o              6       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         14558   19        5304   
+                                                               
+    C:/ti/mspm0_sdk_2_05_01_00/source/ti/driverlib/lib/ticlang/m0p/mspm0g1x0x_g3x0x/driverlib.a
+       dl_mcan.o                      1792    96        0      
+       dl_interrupt.o                 164     0         192    
+       dl_i2c.o                       240     0         0      
+       dl_sysctl_mspm0g1x0x_g3x0x.o   220     0         0      
+       dl_uart.o                      218     0         0      
+       dl_dma.o                       76      0         0      
+       dl_common.o                    10      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         2720    96        192    
+                                                               
+    C:/ti/mspm0_sdk_2_05_01_00/source/ti/drivers/lib/ticlang/m0p/drivers_mspm0g1x0x_g3x0x.a
+       UARTMSPM0.o                    2336    48        76     
+       I2CMSPM0.o                     1864    16        0      
+       DMAMSPM0.o                     1304    48        77     
+       GPIOMSPM0.o                    948     32        1      
+       RingBuf.o                      918     0         0      
+       UART.o                         640     0         4      
+       I2C.o                          370     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         8380    144       158    
+                                                               
+    C:\ti\ccs1281\ccs\tools\compiler\ti-cgt-armllvm_3.2.2.LTS\lib\armv6m-ti-none-eabi/c/libc.a
+       e_pow.c.obj                    2730    48        0      
+       e_sqrt.c.obj                   388     0         0      
        s_scalbn.c.obj                 216     0         0      
        memcpy16.S.obj                 154     0         0      
-       copy_decompress_lzss.c.obj     124     0         0      
+       copy_decompress_lzss.c.obj     120     0         0      
        memset16.S.obj                 98      0         0      
        autoinit.c.obj                 60      0         0      
        boot_cortex_m.c.obj            40      0         0      
        copy_decompress_none.c.obj     18      0         0      
        copy_zero_init.c.obj           16      0         0      
-       exit.c.obj                     6       0         0      
+       exit.c.obj                     4       0         0      
        pre_init.c.obj                 4       0         0      
     +--+------------------------------+-------+---------+---------+
-       Total:                         3808    48        0      
+       Total:                         3848    48        0      
                                                                
-    /Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_4.0.2.LTS/lib/armv6m-ti-none-eabi/c/libsysbm.a
-       hostexit.c.obj                 4       0         0      
-    +--+------------------------------+-------+---------+---------+
-       Total:                         4       0         0      
-                                                               
-    /Applications/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_4.0.2.LTS/lib/armv6m-ti-none-eabi/libclang_rt.builtins.a
+    C:\ti\ccs1281\ccs\tools\compiler\ti-cgt-armllvm_3.2.2.LTS\lib\clang/15.0.7/lib/armv6m-ti-none-eabi/libclang_rt.builtins.a
        adddf3.S.obj                   434     0         0      
        divdf3.S.obj                   268     0         0      
        muldf3.S.obj                   244     0         0      
@@ -575,63 +609,23 @@ MODULE SUMMARY
     +--+------------------------------+-------+---------+---------+
        Total:                         2822    0         0      
                                                                
-    /Users/krisztiancsuta/Documents/FRT/freertos_builds_LP_MSPM0G3507_release_ticlang/Debug/freertos_builds_LP_MSPM0G3507_release_ticlang.lib
-       tasks.o                        4882    9         360    
-       heap_4.o                       972     0         3104   
-       queue.o                        3484    0         0      
-       timers.o                       1434    8         380    
-       StaticAllocs_freertos.o        80      0         1224   
-       HwiPMSPM0_freertos.o           806     0         196    
-       port.o                         936     0         16     
-       pthread.o                      914     2         20     
-       SemaphoreP_freertos.o          318     0         0      
-       list.o                         296     0         0      
-       memory.o                       258     0         0      
-       PTLS.o                         88      0         0      
-       aeabi_portable.o               84      0         4      
-       ClockP_freertos.o              6       0         0      
-    +--+------------------------------+-------+---------+---------+
-       Total:                         14558   19        5304   
-                                                               
-    /Users/krisztiancsuta/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/lib/ticlang/m0p/mspm0g1x0x_g3x0x/driverlib.a
-       dl_mcan.o                      1776    96        0      
-       dl_interrupt.o                 164     0         192    
-       dl_i2c.o                       240     0         0      
-       dl_sysctl_mspm0g1x0x_g3x0x.o   220     0         0      
-       dl_uart.o                      218     0         0      
-       dl_dma.o                       76      0         0      
-       dl_common.o                    10      0         0      
-    +--+------------------------------+-------+---------+---------+
-       Total:                         2704    96        192    
-                                                               
-    /Users/krisztiancsuta/ti/mspm0_sdk_2_04_00_06/source/ti/drivers/lib/ticlang/m0p/drivers_mspm0g1x0x_g3x0x.a
-       UARTMSPM0.o                    2336    48        76     
-       I2CMSPM0.o                     1864    16        0      
-       DMAMSPM0.o                     1304    48        77     
-       GPIOMSPM0.o                    948     32        1      
-       RingBuf.o                      918     0         0      
-       UART.o                         640     0         4      
-       I2C.o                          370     0         0      
-    +--+------------------------------+-------+---------+---------+
-       Total:                         8380    144       158    
-                                                               
        Stack:                         0       0         512    
-       Linker Generated:              0       115       0      
+       Linker Generated:              0       117       0      
     +--+------------------------------+-------+---------+---------+
-       Grand Total:                   42198   1007      23127  
+       Grand Total:                   42458   1009      23127  
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 0000a8cc records: 3, size/record: 8, table size: 24
-	.data: load addr=0000a870, load size=0000003f bytes, run addr=20205488, run size=00000311 bytes, compression=lzss
-	.bss: load addr=0000a8bc, load size=00000008 bytes, run addr=20200000, run size=00005486 bytes, compression=zero_init
-	.vtable: load addr=0000a8c4, load size=00000008 bytes, run addr=20205800, run size=000000c0 bytes, compression=zero_init
+__TI_cinit_table @ 0000a9e0 records: 3, size/record: 8, table size: 24
+	.data: load addr=0000a980, load size=00000041 bytes, run addr=20205488, run size=00000311 bytes, compression=lzss
+	.bss: load addr=0000a9d0, load size=00000008 bytes, run addr=20200000, run size=00005486 bytes, compression=zero_init
+	.vtable: load addr=0000a9d8, load size=00000008 bytes, run addr=20205800, run size=000000c0 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 0000a8b0 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 0000a9c4 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -643,189 +637,186 @@ callee name               trampoline name
    callee addr  tramp addr   call addr  call info
 --------------  -----------  ---------  ----------------
 __aeabi_dmul              $Tramp$TT$L$PI$$__aeabi_dmul
-   00005e65     0000a520     0000a51e   libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_0)
-                             0000a538          : e_pow.c.obj (.text.OUTLINED_FUNCTION_1)
-                             0000a542          : e_pow.c.obj (.text.OUTLINED_FUNCTION_6)
-                             0000a584          : e_pow.c.obj (.text.OUTLINED_FUNCTION_4)
-                             0000a58a          : e_pow.c.obj (.text.OUTLINED_FUNCTION_5)
-                             0000a5a2          : e_pow.c.obj (.text.OUTLINED_FUNCTION_8)
+   00005f89     0000a630     0000a62e   libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_0)
+                             0000a648          : e_pow.c.obj (.text.OUTLINED_FUNCTION_1)
+                             0000a67e          : e_pow.c.obj (.text.OUTLINED_FUNCTION_3)
+                             0000a69c          : e_pow.c.obj (.text.OUTLINED_FUNCTION_6)
+                             0000a6aa          : e_pow.c.obj (.text.OUTLINED_FUNCTION_7)
 __aeabi_dsub              $Tramp$TT$L$PI$$__aeabi_dsub
-   00003a79     0000a54c     0000a54a   libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_2)
+   00003ce9     0000a654     0000a650   libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_2)
 __aeabi_dadd              $Tramp$TT$L$PI$$__aeabi_dadd
-   00003a83     0000a570     0000a56e   libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_3)
-                             0000a59a          : e_pow.c.obj (.text.OUTLINED_FUNCTION_10)
-                             0000a59e          : e_pow.c.obj (.text.OUTLINED_FUNCTION_7)
-                             0000a5a6          : e_pow.c.obj (.text.OUTLINED_FUNCTION_9)
+   00003cf3     0000a688     0000a684   libc.a : e_pow.c.obj (.text.OUTLINED_FUNCTION_5)
+                             0000a6a6          : e_pow.c.obj (.text.OUTLINED_FUNCTION_4)
+                             0000a6ae          : e_pow.c.obj (.text.OUTLINED_FUNCTION_8)
 
 [3 trampolines]
-[11 trampoline calls]
+[9 trampoline calls]
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
 
 address   name                               
 -------   ----                               
-00003213  ADC0_IRQHandler                    
-00003213  ADC1_IRQHandler                    
-00003213  AES_IRQHandler                     
-0000861c  C$$EXIT                            
-00003213  CANFD0_IRQHandler                  
-00006d09  CAN_transfer                       
-0000a565  ClockP_getSystemTickPeriod         
-00003213  DAC0_IRQHandler                    
-0000a50d  DL_Common_delayCycles              
-00008f0d  DL_DMA_initChannel                 
-00008ab5  DL_I2C_fillControllerTXFIFO        
-00009c45  DL_I2C_flushControllerRXFIFO       
-0000958d  DL_I2C_flushControllerTXFIFO       
-0000a005  DL_I2C_setClockConfig              
-00007b61  DL_Interrupt_registerInterrupt     
-0000a321  DL_Interrupt_unregisterInterrupt   
-0000999d  DL_MCAN_TXBufAddReq                
-00005bb9  DL_MCAN_config                     
-0000a409  DL_MCAN_getOpMode                  
-000091f1  DL_MCAN_getRevisionId              
-0000610d  DL_MCAN_init                       
-0000a419  DL_MCAN_isMemInitDone              
-00008bcd  DL_MCAN_lpbkModeEnable             
-0000246d  DL_MCAN_msgRAMConfig               
-0000647d  DL_MCAN_setBitTime                 
-0000a051  DL_MCAN_setClockConfig             
-000099d1  DL_MCAN_setExtIDAndMask            
-0000a279  DL_MCAN_setOpMode                  
-00005c9d  DL_MCAN_writeMsgRam                
-000061e9  DL_SYSCTL_configSYSPLL             
-00008155  DL_UART_configBaudRate             
-000090d5  DL_UART_init                       
-0000a3c1  DL_UART_setClockConfig             
-0000a83c  DMAMSPM0_Config                    
-00007f41  DMAMSPM0_close                     
-00009d61  DMAMSPM0_disableChannel            
-0000a429  DMAMSPM0_getCurrTransferSize       
-000062c5  DMAMSPM0_init                      
-0000689d  DMAMSPM0_open                      
-00007bf1  DMAMSPM0_setupTransfer             
+0000348f  ADC0_IRQHandler                    
+0000348f  ADC1_IRQHandler                    
+0000348f  AES_IRQHandler                     
+0000a6b4  C$$EXIT                            
+0000348f  CANFD0_IRQHandler                  
+0000765d  CAN_transfer                       
+0000a675  ClockP_getSystemTickPeriod         
+0000348f  DAC0_IRQHandler                    
+0000a61d  DL_Common_delayCycles              
+00009021  DL_DMA_initChannel                 
+00008bc9  DL_I2C_fillControllerTXFIFO        
+00009d55  DL_I2C_flushControllerRXFIFO       
+0000969d  DL_I2C_flushControllerTXFIFO       
+0000a115  DL_I2C_setClockConfig              
+00007c7d  DL_Interrupt_registerInterrupt     
+0000a431  DL_Interrupt_unregisterInterrupt   
+00009aad  DL_MCAN_TXBufAddReq                
+00005dc1  DL_MCAN_config                     
+0000a519  DL_MCAN_getOpMode                  
+00009305  DL_MCAN_getRevisionId              
+00006231  DL_MCAN_init                       
+0000a529  DL_MCAN_isMemInitDone              
+00008ce1  DL_MCAN_lpbkModeEnable             
+00002701  DL_MCAN_msgRAMConfig               
+000065a1  DL_MCAN_setBitTime                 
+0000a161  DL_MCAN_setClockConfig             
+00009ae1  DL_MCAN_setExtIDAndMask            
+0000a389  DL_MCAN_setOpMode                  
+00005739  DL_MCAN_writeMsgRam                
+0000630d  DL_SYSCTL_configSYSPLL             
+00008271  DL_UART_configBaudRate             
+000091e9  DL_UART_init                       
+0000a4d1  DL_UART_setClockConfig             
+0000a94c  DMAMSPM0_Config                    
+0000805d  DMAMSPM0_close                     
+00009e71  DMAMSPM0_disableChannel            
+0000a539  DMAMSPM0_getCurrTransferSize       
+000063e9  DMAMSPM0_init                      
+000069c1  DMAMSPM0_open                      
+00007d0d  DMAMSPM0_setupTransfer             
 202056d0  DMAObject                          
-0000a684  DMA_Ch_defaultParams               
-00003213  DMA_IRQHandler                     
-00007495  DMA_Init                           
-00003213  Default_Handler                    
-0000110d  ExtractAlphaParameters             
-00003c0d  ExtractCPParameters                
-00002025  ExtractDeviatingPixels             
-00005239  ExtractKsToParameters              
-00002891  ExtractKtaPixelParameters          
-000038d9  ExtractKvPixelParameters           
-00001b55  ExtractOffsetParameters            
-0000a814  GPIO_config                        
-00005431  GPIO_hwiIntFxn                     
-0000a863  GPIO_pinLowerBound                 
-0000a86a  GPIO_pinUpperBound                 
-00002681  GPIO_setConfigAndMux               
-000071e5  GPIO_setInterruptConfig            
-00003213  GROUP0_IRQHandler                  
-00003213  GROUP1_IRQHandler                  
-0000861d  HOSTexit                           
-0000a14d  HardFault_Handler                  
-0000a075  HwiP_Params_init                   
-00006a1d  HwiP_construct                     
-00009235  HwiP_create                        
-0000a309  HwiP_delete                        
-0000a16d  HwiP_destruct                      
-00009a05  HwiP_disable                       
-0000a335  HwiP_disableInterrupt              
-000097a5  HwiP_dispatch                      
-0000a349  HwiP_enableInterrupt               
-00009c75  HwiP_inISR                         
-0000a099  HwiP_restore                       
+0000a794  DMA_Ch_defaultParams               
+0000348f  DMA_IRQHandler                     
+0000750d  DMA_Init                           
+0000348f  Default_Handler                    
+00001151  ExtractAlphaParameters             
+00003b55  ExtractCPParameters                
+00002f05  ExtractDeviatingPixels             
+0000582d  ExtractKsToParameters              
+000022ad  ExtractKtaPixelParameters          
+00002035  ExtractKvPixelParameters           
+00001b85  ExtractOffsetParameters            
+0000a924  GPIO_config                        
+00005451  GPIO_hwiIntFxn                     
+0000a973  GPIO_pinLowerBound                 
+0000a97a  GPIO_pinUpperBound                 
+00002915  GPIO_setConfigAndMux               
+00007309  GPIO_setInterruptConfig            
+0000348f  GROUP0_IRQHandler                  
+0000348f  GROUP1_IRQHandler                  
+0000a25d  HardFault_Handler                  
+0000a185  HwiP_Params_init                   
+00006b41  HwiP_construct                     
+00009349  HwiP_create                        
+0000a419  HwiP_delete                        
+0000a27d  HwiP_destruct                      
+00009b15  HwiP_disable                       
+0000a445  HwiP_disableInterrupt              
+000098b5  HwiP_dispatch                      
+0000a459  HwiP_enableInterrupt               
+00009d85  HwiP_inISR                         
+0000a1a9  HwiP_restore                       
 20205714  HwiP_swiPIntNum                    
-00003213  I2C0_IRQHandler                    
-00003213  I2C1_IRQHandler                    
-0000a73c  I2CMSPM0HWAttrs                    
+0000348f  I2C0_IRQHandler                    
+0000348f  I2C1_IRQHandler                    
+0000a84c  I2CMSPM0HWAttrs                    
 20204cf0  I2CMSPM0Objects                    
-0000a35d  I2CSupport_controllerFinish        
-00003c0b  I2CSupport_powerRelConstraint      
-0000580b  I2CSupport_powerSetConstraint      
-00008535  I2CSupport_primeTransfer           
-0000a4d1  I2C_Params_init                    
-00009eeb  I2C_cancel                         
-0000a844  I2C_config                         
-0000a86b  I2C_count                          
-00006d07  I2C_init                           
-00002a85  I2C_open                           
-0000a439  I2C_transfer                       
-0000487d  I2C_transferTimeout                
-00000b09  MLX90640_CalculateTo               
-000097dd  MLX90640_CheckStatus               
-00005529  MLX90640_DataProcessing            
-0000a3d3  MLX90640_DumpEE                    
-00002251  MLX90640_ExtractParameters         
-000033d5  MLX90640_GetFrameData              
-00005d81  MLX90640_GetTa                     
-00007291  MLX90640_GetVdd                    
-00009a39  MLX90640_I2CInit                   
-0000460d  MLX90640_I2CRead                   
-0000733d  MLX90640_I2CWrite                  
-00008f59  MLX90640_Init                      
-00008dcd  MLX90640_ReadTemperatures          
-0000a291  MLX90640_SetI2CHandle              
-00009815  MLX90640_SetInterleavedMode        
-00009391  MLX90640_SetRefreshRate            
-000093d1  MLX90640_SetResolution             
-00003213  NMI_Handler                        
-0000a245  PTLS_getBuf                        
-0000a25f  PTLS_setBuf                        
-0000a0bd  PTLS_taskDeleteHook                
-00009281  PendSV_Handler                     
-00003213  RTC_IRQHandler                     
-00009b3d  Reset_Handler                      
-0000a499  RingBuf_construct                  
-0000934d  RingBuf_get                        
-00009a6d  RingBuf_getConsume                 
-0000a02b  RingBuf_getPointer                 
-00004be5  RingBuf_getn                       
-00009165  RingBuf_put                        
-00009511  RingBuf_putAdvance                 
-0000984d  RingBuf_putPointer                 
-00004cff  RingBuf_putn                       
-00003213  SPI0_IRQHandler                    
-00003213  SPI1_IRQHandler                    
-00007493  SVC_Handler                        
-00009885  SYSCFG_DL_GPIO_init                
-0000753d  SYSCFG_DL_I2C_0_init               
-000063a1  SYSCFG_DL_MCAN0_init               
-0000a0e1  SYSCFG_DL_SYSCTL_CLK_init          
-00008fa5  SYSCFG_DL_SYSCTL_init              
-00009f15  SYSCFG_DL_init                     
-00009aa1  SYSCFG_DL_initPower                
-00009411  SemaphoreP_constructBinary         
-000098bd  SemaphoreP_createBinary            
-0000a449  SemaphoreP_delete                  
-00007eb5  SemaphoreP_pend                    
-00009d8d  SemaphoreP_post                    
-00009db9  SysTick_Handler                    
-00003213  TIMA0_IRQHandler                   
-00003213  TIMA1_IRQHandler                   
-00003213  TIMG0_IRQHandler                   
-00003213  TIMG12_IRQHandler                  
-00003213  TIMG6_IRQHandler                   
-00003213  TIMG7_IRQHandler                   
-00003213  TIMG8_IRQHandler                   
-0000a459  UART0_IRQHandler                   
-00003213  UART1_IRQHandler                   
-00003213  UART2_IRQHandler                   
-00003213  UART3_IRQHandler                   
-0000a800  UARTMSPSupportFxns                 
-00005335  UARTMSP_dmaRx                      
-000084bd  UARTMSP_enableInts                 
-0000772b  UARTMSP_eventCallback              
-0000165d  UARTMSP_interruptHandler           
+0000a46d  I2CSupport_controllerFinish        
+00003e7b  I2CSupport_powerRelConstraint      
+00005737  I2CSupport_powerSetConstraint      
+0000864d  I2CSupport_primeTransfer           
+0000a5e1  I2C_Params_init                    
+00009ffb  I2C_cancel                         
+0000a954  I2C_config                         
+0000a97b  I2C_count                          
+00006e2b  I2C_init                           
+00002b25  I2C_open                           
+0000a549  I2C_transfer                       
+00004999  I2C_transferTimeout                
+00000b31  MLX90640_CalculateTo               
+000098ed  MLX90640_CheckStatus               
+00005549  MLX90640_DataProcessing            
+0000a4e3  MLX90640_DumpEE                    
+000024e5  MLX90640_ExtractParameters         
+00003651  MLX90640_GetFrameData              
+00005ea5  MLX90640_GetTa                     
+000073b5  MLX90640_GetVdd                    
+00009b49  MLX90640_I2CInit                   
+00004309  MLX90640_I2CRead                   
+00006e2d  MLX90640_I2CWrite                  
+0000906d  MLX90640_Init                      
+00008ee1  MLX90640_ReadTemperatures          
+0000a3a1  MLX90640_SetI2CHandle              
+00009925  MLX90640_SetInterleavedMode        
+000094a1  MLX90640_SetRefreshRate            
+000094e1  MLX90640_SetResolution             
+0000348f  NMI_Handler                        
+0000a355  PTLS_getBuf                        
+0000a36f  PTLS_setBuf                        
+0000a1cd  PTLS_taskDeleteHook                
+00009391  PendSV_Handler                     
+0000348f  RTC_IRQHandler                     
+00009c4d  Reset_Handler                      
+0000a5a9  RingBuf_construct                  
+0000945d  RingBuf_get                        
+00009b7d  RingBuf_getConsume                 
+0000a13b  RingBuf_getPointer                 
+00004d01  RingBuf_getn                       
+00009279  RingBuf_put                        
+00009621  RingBuf_putAdvance                 
+0000995d  RingBuf_putPointer                 
+00004e1b  RingBuf_putn                       
+0000348f  SPI0_IRQHandler                    
+0000348f  SPI1_IRQHandler                    
+0000750b  SVC_Handler                        
+00009995  SYSCFG_DL_GPIO_init                
+000075b5  SYSCFG_DL_I2C_0_init               
+000064c5  SYSCFG_DL_MCAN0_init               
+0000a1f1  SYSCFG_DL_SYSCTL_CLK_init          
+000090b9  SYSCFG_DL_SYSCTL_init              
+0000a025  SYSCFG_DL_init                     
+00009bb1  SYSCFG_DL_initPower                
+00009521  SemaphoreP_constructBinary         
+000099cd  SemaphoreP_createBinary            
+0000a559  SemaphoreP_delete                  
+00007fd1  SemaphoreP_pend                    
+00009e9d  SemaphoreP_post                    
+00009ec9  SysTick_Handler                    
+0000348f  TIMA0_IRQHandler                   
+0000348f  TIMA1_IRQHandler                   
+0000348f  TIMG0_IRQHandler                   
+0000348f  TIMG12_IRQHandler                  
+0000348f  TIMG6_IRQHandler                   
+0000348f  TIMG7_IRQHandler                   
+0000348f  TIMG8_IRQHandler                   
+0000a569  UART0_IRQHandler                   
+0000348f  UART1_IRQHandler                   
+0000348f  UART2_IRQHandler                   
+0000348f  UART3_IRQHandler                   
+0000a910  UARTMSPSupportFxns                 
+00005355  UARTMSP_dmaRx                      
+0000855d  UARTMSP_enableInts                 
+00007847  UARTMSP_eventCallback              
+0000168d  UARTMSP_interruptHandler           
 20205638  UARTObject                         
-0000a84c  UART_config                        
-00005621  UART_readFullFeatured              
-000079a3  UART_writeBuffered                 
-00006dbd  UART_writeCallback                 
-0000954f  UART_writeFullFeatured             
+0000a95c  UART_config                        
+00005641  UART_readFullFeatured              
+00007abf  UART_writeBuffered                 
+00006ee1  UART_writeCallback                 
+0000965f  UART_writeFullFeatured             
 20208000  __STACK_END                        
 00000200  __STACK_SIZE                       
 00000000  __TI_ATRegion0_region_sz           
@@ -837,206 +828,206 @@ address   name
 00000000  __TI_ATRegion2_region_sz           
 00000000  __TI_ATRegion2_src_addr            
 00000000  __TI_ATRegion2_trg_addr            
-0000a8cc  __TI_CINIT_Base                    
-0000a8e4  __TI_CINIT_Limit                   
-0000a8e4  __TI_CINIT_Warm                    
-0000a8b0  __TI_Handler_Table_Base            
-0000a8bc  __TI_Handler_Table_Limit           
-000096b9  __TI_auto_init_nobinit_nopinit     
-00008441  __TI_decompress_lzss               
-0000a3f7  __TI_decompress_none               
+0000a9e0  __TI_CINIT_Base                    
+0000a9f8  __TI_CINIT_Limit                   
+0000a9f8  __TI_CINIT_Warm                    
+0000a9c4  __TI_Handler_Table_Base            
+0000a9d0  __TI_Handler_Table_Limit           
+000097c9  __TI_auto_init_nobinit_nopinit     
+000085d5  __TI_decompress_lzss               
+0000a507  __TI_decompress_none               
 ffffffff  __TI_pprof_out_hndl                
 ffffffff  __TI_prof_data_size                
 ffffffff  __TI_prof_data_start               
 00000000  __TI_static_base__                 
-0000a489  __TI_zero_init                     
-00003a83  __adddf3                           
-00006637  __addsf3                           
-00008621  __aeabi_d2f                        
-00003a83  __aeabi_dadd                       
-0000898d  __aeabi_dcmpeq                     
-000089c9  __aeabi_dcmpge                     
-000089dd  __aeabi_dcmpgt                     
-000089b5  __aeabi_dcmple                     
-000089a1  __aeabi_dcmplt                     
-00004f25  __aeabi_ddiv                       
-00005e65  __aeabi_dmul                       
-00003a79  __aeabi_dsub                       
-00008cd5  __aeabi_errno_addr                 
-00009491  __aeabi_f2d                        
-00006637  __aeabi_fadd                       
-000089f1  __aeabi_fcmpeq                     
-00008a2d  __aeabi_fcmpge                     
-00008a41  __aeabi_fcmpgt                     
-00008a19  __aeabi_fcmple                     
-00008a05  __aeabi_fcmplt                     
-000080d1  __aeabi_fdiv                       
-00007d11  __aeabi_fmul                       
-0000662d  __aeabi_fsub                       
-00009e11  __aeabi_i2d                        
-000095c9  __aeabi_i2f                        
-00007f3f  __aeabi_idiv0                      
-00008153  __aeabi_ldiv0                      
-0000a1cd  __aeabi_llsl                       
-0000a129  __aeabi_lmul                       
-0000a4dd  __aeabi_memclr                     
-0000a4dd  __aeabi_memclr4                    
-0000a4dd  __aeabi_memclr8                    
-00009279  __aeabi_memcpy                     
-00009279  __aeabi_memcpy4                    
-00009279  __aeabi_memcpy8                    
-0000a4a9  __aeabi_memset                     
-0000a4a9  __aeabi_memset4                    
-0000a4a9  __aeabi_memset8                    
-0000a105  __aeabi_ui2d                       
-00009f3d  __aeabi_ui2f                       
-00009451  __aeabi_uidiv                      
-00009451  __aeabi_uidivmod                   
-0000a371  __aeabi_uldivmod                   
-0000a1cd  __ashldi3                          
+0000a599  __TI_zero_init                     
+00003cf3  __adddf3                           
+0000675b  __addsf3                           
+000086c1  __aeabi_d2f                        
+00003cf3  __aeabi_dadd                       
+00008aa1  __aeabi_dcmpeq                     
+00008add  __aeabi_dcmpge                     
+00008af1  __aeabi_dcmpgt                     
+00008ac9  __aeabi_dcmple                     
+00008ab5  __aeabi_dcmplt                     
+00005041  __aeabi_ddiv                       
+00005f89  __aeabi_dmul                       
+00003ce9  __aeabi_dsub                       
+00008de9  __aeabi_errno_addr                 
+000095a1  __aeabi_f2d                        
+0000675b  __aeabi_fadd                       
+00008b05  __aeabi_fcmpeq                     
+00008b41  __aeabi_fcmpge                     
+00008b55  __aeabi_fcmpgt                     
+00008b2d  __aeabi_fcmple                     
+00008b19  __aeabi_fcmplt                     
+000081ed  __aeabi_fdiv                       
+00007e2d  __aeabi_fmul                       
+00006751  __aeabi_fsub                       
+00009f21  __aeabi_i2d                        
+000096d9  __aeabi_i2f                        
+0000805b  __aeabi_idiv0                      
+0000826f  __aeabi_ldiv0                      
+0000a2dd  __aeabi_llsl                       
+0000a239  __aeabi_lmul                       
+0000a5ed  __aeabi_memclr                     
+0000a5ed  __aeabi_memclr4                    
+0000a5ed  __aeabi_memclr8                    
+0000a665  __aeabi_memcpy                     
+0000a665  __aeabi_memcpy4                    
+0000a665  __aeabi_memcpy8                    
+0000a5b9  __aeabi_memset                     
+0000a5b9  __aeabi_memset4                    
+0000a5b9  __aeabi_memset8                    
+0000a215  __aeabi_ui2d                       
+0000a04d  __aeabi_ui2f                       
+00009561  __aeabi_uidiv                      
+00009561  __aeabi_uidivmod                   
+0000a481  __aeabi_uldivmod                   
+0000a2dd  __ashldi3                          
 ffffffff  __binit__                          
-00008c25  __clzsi2                           
-00008925  __cmpdf2                           
-000096f5  __cmpsf2                           
-00004f25  __divdf3                           
-000080d1  __divsf3                           
-00008925  __eqdf2                            
-000096f5  __eqsf2                            
-00009491  __extendsfdf2                      
-00009e11  __floatsidf                        
-000095c9  __floatsisf                        
-0000a105  __floatunsidf                      
-00009f3d  __floatunsisf                      
-000085a9  __gedf2                            
-00009605  __gesf2                            
-000085a9  __gtdf2                            
-00009605  __gtsf2                            
-00008925  __ledf2                            
-000096f5  __lesf2                            
-00008925  __ltdf2                            
-000096f5  __ltsf2                            
+00008d39  __clzsi2                           
+00008889  __cmpdf2                           
+00009805  __cmpsf2                           
+00005041  __divdf3                           
+000081ed  __divsf3                           
+00008889  __eqdf2                            
+00009805  __eqsf2                            
+000095a1  __extendsfdf2                      
+00009f21  __floatsidf                        
+000096d9  __floatsisf                        
+0000a215  __floatunsidf                      
+0000a04d  __floatunsisf                      
+000087a9  __gedf2                            
+00009715  __gesf2                            
+000087a9  __gtdf2                            
+00009715  __gtsf2                            
+00008889  __ledf2                            
+00009805  __lesf2                            
+00008889  __ltdf2                            
+00009805  __ltsf2                            
 UNDEFED   __mpu_init                         
-00005e65  __muldf3                           
-0000a129  __muldi3                           
-00009731  __muldsi3                          
-00007d11  __mulsf3                           
-00008925  __nedf2                            
-000096f5  __nesf2                            
+00005f89  __muldf3                           
+0000a239  __muldi3                           
+00009841  __muldsi3                          
+00007e2d  __mulsf3                           
+00008889  __nedf2                            
+00009805  __nesf2                            
 20207e00  __stack                            
 20200000  __start___llvm_prf_bits            
 20200000  __start___llvm_prf_cnts            
 20200000  __stop___llvm_prf_bits             
 20200000  __stop___llvm_prf_cnts             
-00003a79  __subdf3                           
-0000662d  __subsf3                           
-00008621  __truncdfsf2                       
-00007689  __udivmoddi4                       
-00009fdd  _c_int00_noargs                    
-00009e3d  _pthread_cleanup_pop               
+00003ce9  __subdf3                           
+00006751  __subsf3                           
+000086c1  __truncdfsf2                       
+000077a5  __udivmoddi4                       
+0000a0ed  _c_int00_noargs                    
+00009f4d  _pthread_cleanup_pop               
 UNDEFED   _system_post_cinit                 
-0000a5a9  _system_pre_init                   
-0000a593  abort                              
-0000a385  aligned_alloc                      
+0000938d  _system_pre_init                   
+0000a6b5  abort                              
+0000a495  aligned_alloc                      
 ffffffff  binit                              
-000081d5  calloc                             
-00008251  eTaskConfirmSleepModeStatus        
-0000a469  free                               
+000082f1  calloc                             
+0000836d  eTaskConfirmSleepModeStatus        
+0000a579  free                               
 20205180  gMCAN0Backup                       
 20204ed8  gpioCallbackFunctions              
 20205488  gpioPinConfigs                     
 20204fc8  gpioUserArgs                       
 2020543c  i2cParams                          
 00000000  interruptVectors                   
-00006555  ldexp                              
-00006555  ldexpl                             
-00008c7d  main                               
-00009641  mainThread                         
-00009089  malloc                             
-0000a4e9  memalign                           
-00007909  memcpy                             
-00008a53  memset                             
+00006679  ldexp                              
+00006679  ldexpl                             
+00008d91  main                               
+00009751  mainThread                         
+0000919d  malloc                             
+0000a5f9  memalign                           
+00007a25  memcpy                             
+00008b67  memset                             
 2020544c  message                            
 20205728  mlx90640_i2cHandle                 
 20205796  mlx90640_i2c_initialized           
 000000c1  pow                                
 000000c1  powl                               
-0000a2a9  prvGetRegistersFromStack           
-0000a229  pthread_attr_init                  
-00009d33  pthread_attr_setdetachstate        
-00009b09  pthread_attr_setschedparam         
-0000a3e5  pthread_attr_setstacksize          
-000044c1  pthread_create                     
-00008709  pthread_exit                       
-0000a2c1  pthread_self                       
-00008b71  pthread_setcancelstate             
-00003215  pvPortMalloc                       
-00008ff1  pvTaskGetThreadLocalStoragePointer 
-0000a18d  pvTaskIncrementMutexHeldCount      
+0000a3b9  prvGetRegistersFromStack           
+0000a339  pthread_attr_init                  
+00009e43  pthread_attr_setdetachstate        
+00009c19  pthread_attr_setschedparam         
+0000a4f5  pthread_attr_setstacksize          
+00004719  pthread_create                     
+00008819  pthread_exit                       
+0000a3d1  pthread_self                       
+00008c85  pthread_setcancelstate             
+00003491  pvPortMalloc                       
+00009105  pvTaskGetThreadLocalStoragePointer 
+0000a29d  pvTaskIncrementMutexHeldCount      
 20205730  pxCurrentTCB                       
-0000903d  pxPortInitialiseStack              
-0000a4f5  realloc                            
+00009151  pxPortInitialiseStack              
+0000a605  realloc                            
 20205484  rxComBuffer                        
-00006555  scalbn                             
-00006555  scalbnl                            
-000040a5  sqrt                               
-000040a5  sqrtl                              
+00006679  scalbn                             
+00006679  scalbnl                            
+00004005  sqrt                               
+00004005  sqrtl                              
 20205485  txComBuffer                        
-0000a55d  ulSetInterruptMaskFromISR          
-0000911d  uxListRemove                       
-0000a864  uxTopUsedPriority                  
-00009f8d  vApplicationGetIdleTaskMemory      
-00009fb5  vApplicationGetTimerTaskMemory     
-0000a5ad  vApplicationStackOverflowHook      
-0000a58d  vClearInterruptMaskFromISR         
-00009e69  vListInitialise                    
-0000a4b7  vListInitialiseItem                
-000087e5  vListInsert                        
-0000976b  vListInsertEnd                     
-0000a2d9  vPortEnterCritical                 
-00009e95  vPortExitCritical                  
-0000772d  vPortFree                          
-00008d29  vPortSetupTimerInterrupt           
-00003d9d  vPortSuppressTicksAndSleep         
-0000a2f1  vPortYield                         
-00009c11  vQueueDelete                       
-00008851  vQueueWaitForMessageRestricted     
-00005ad1  vTaskDelete                        
-0000a1ad  vTaskInternalSetTimeOutState       
-0000a501  vTaskMissedYield                   
-00009b75  vTaskPlaceOnEventList              
-00009309  vTaskPlaceOnEventListRestricted    
-00005139  vTaskPriorityDisinheritAfterTimeout
-00009ba9  vTaskSetApplicationTaskTag         
-00008ebd  vTaskSetThreadLocalStoragePointer  
-00006b95  vTaskStartScheduler                
-00009bdd  vTaskStepTick                      
-00004e15  vTaskSuspend                       
-0000a479  vTaskSuspendAll                    
-000058f9  vTaskSwitchContext                 
-000094d1  xPortStartScheduler                
-000073e9  xQueueGenericCreate                
-0000695d  xQueueGenericCreateStatic          
-000077cd  xQueueGenericReset                 
-00003041  xQueueGenericSend                  
-000049a9  xQueueGenericSendFromISR           
-00005717  xQueueGiveFromISR                  
-00003735  xQueueReceive                      
-000059e5  xQueueReceiveFromISR               
-00002c79  xQueueSemaphoreTake                
-00006e71  xTaskCheckForTimeOut               
-00007acf  xTaskCreate                        
-00007a3b  xTaskCreateStatic                  
-0000992d  xTaskGetApplicationTaskTag         
-0000a399  xTaskGetCurrentTaskHandle          
-00009965  xTaskGetSchedulerState             
-0000a3ad  xTaskGetTickCount                  
-00004215  xTaskIncrementTick                 
-000067d9  xTaskPriorityDisinherit            
-00005f49  xTaskPriorityInherit               
-00007135  xTaskRemoveFromEventList           
-00004749  xTaskResumeAll                     
-000083c5  xTimerCreateTimerTask              
-00007c81  xTimerGenericCommand               
+0000a66d  ulSetInterruptMaskFromISR          
+00009231  uxListRemove                       
+0000a974  uxTopUsedPriority                  
+0000a09d  vApplicationGetIdleTaskMemory      
+0000a0c5  vApplicationGetTimerTaskMemory     
+0000a6b1  vApplicationStackOverflowHook      
+0000a69f  vClearInterruptMaskFromISR         
+00009f79  vListInitialise                    
+0000a5c7  vListInitialiseItem                
+00008961  vListInsert                        
+0000987b  vListInsertEnd                     
+0000a3e9  vPortEnterCritical                 
+00009fa5  vPortExitCritical                  
+00007849  vPortFree                          
+00008e3d  vPortSetupTimerInterrupt           
+00003e7d  vPortSuppressTicksAndSleep         
+0000a401  vPortYield                         
+00009d21  vQueueDelete                       
+000089cd  vQueueWaitForMessageRestricted     
+00005cd9  vTaskDelete                        
+0000a2bd  vTaskInternalSetTimeOutState       
+0000a611  vTaskMissedYield                   
+00009c85  vTaskPlaceOnEventList              
+00009419  vTaskPlaceOnEventListRestricted    
+00005255  vTaskPriorityDisinheritAfterTimeout
+00009cb9  vTaskSetApplicationTaskTag         
+00008fd1  vTaskSetThreadLocalStoragePointer  
+00006cb9  vTaskStartScheduler                
+00009ced  vTaskStepTick                      
+00004f31  vTaskSuspend                       
+0000a589  vTaskSuspendAll                    
+00005b01  vTaskSwitchContext                 
+000095e1  xPortStartScheduler                
+00007461  xQueueGenericCreate                
+00006a81  xQueueGenericCreateStatic          
+000078e9  xQueueGenericReset                 
+000032bd  xQueueGenericSend                  
+00004ac5  xQueueGenericSendFromISR           
+00005921  xQueueGiveFromISR                  
+000039b1  xQueueReceive                      
+00005bed  xQueueReceiveFromISR               
+00002d19  xQueueSemaphoreTake                
+00006f95  xTaskCheckForTimeOut               
+00007beb  xTaskCreate                        
+00007b57  xTaskCreateStatic                  
+00009a3d  xTaskGetApplicationTaskTag         
+0000a4a9  xTaskGetCurrentTaskHandle          
+00009a75  xTaskGetSchedulerState             
+0000a4bd  xTaskGetTickCount                  
+0000446d  xTaskIncrementTick                 
+000068fd  xTaskPriorityDisinherit            
+0000606d  xTaskPriorityInherit               
+00007259  xTaskRemoveFromEventList           
+00004865  xTaskResumeAll                     
+000084e1  xTimerCreateTimerTask              
+00007d9d  xTimerGenericCommand               
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -1057,336 +1048,335 @@ address   name
 000000c1  pow                                
 000000c1  powl                               
 00000200  __STACK_SIZE                       
-00000b09  MLX90640_CalculateTo               
-0000110d  ExtractAlphaParameters             
-0000165d  UARTMSP_interruptHandler           
-00001b55  ExtractOffsetParameters            
-00002025  ExtractDeviatingPixels             
-00002251  MLX90640_ExtractParameters         
-0000246d  DL_MCAN_msgRAMConfig               
-00002681  GPIO_setConfigAndMux               
-00002891  ExtractKtaPixelParameters          
-00002a85  I2C_open                           
-00002c79  xQueueSemaphoreTake                
-00003041  xQueueGenericSend                  
-00003213  ADC0_IRQHandler                    
-00003213  ADC1_IRQHandler                    
-00003213  AES_IRQHandler                     
-00003213  CANFD0_IRQHandler                  
-00003213  DAC0_IRQHandler                    
-00003213  DMA_IRQHandler                     
-00003213  Default_Handler                    
-00003213  GROUP0_IRQHandler                  
-00003213  GROUP1_IRQHandler                  
-00003213  I2C0_IRQHandler                    
-00003213  I2C1_IRQHandler                    
-00003213  NMI_Handler                        
-00003213  RTC_IRQHandler                     
-00003213  SPI0_IRQHandler                    
-00003213  SPI1_IRQHandler                    
-00003213  TIMA0_IRQHandler                   
-00003213  TIMA1_IRQHandler                   
-00003213  TIMG0_IRQHandler                   
-00003213  TIMG12_IRQHandler                  
-00003213  TIMG6_IRQHandler                   
-00003213  TIMG7_IRQHandler                   
-00003213  TIMG8_IRQHandler                   
-00003213  UART1_IRQHandler                   
-00003213  UART2_IRQHandler                   
-00003213  UART3_IRQHandler                   
-00003215  pvPortMalloc                       
-000033d5  MLX90640_GetFrameData              
-00003735  xQueueReceive                      
-000038d9  ExtractKvPixelParameters           
-00003a79  __aeabi_dsub                       
-00003a79  __subdf3                           
-00003a83  __adddf3                           
-00003a83  __aeabi_dadd                       
-00003c0b  I2CSupport_powerRelConstraint      
-00003c0d  ExtractCPParameters                
-00003d9d  vPortSuppressTicksAndSleep         
-000040a5  sqrt                               
-000040a5  sqrtl                              
-00004215  xTaskIncrementTick                 
-000044c1  pthread_create                     
-0000460d  MLX90640_I2CRead                   
-00004749  xTaskResumeAll                     
-0000487d  I2C_transferTimeout                
-000049a9  xQueueGenericSendFromISR           
-00004be5  RingBuf_getn                       
-00004cff  RingBuf_putn                       
-00004e15  vTaskSuspend                       
-00004f25  __aeabi_ddiv                       
-00004f25  __divdf3                           
-00005139  vTaskPriorityDisinheritAfterTimeout
-00005239  ExtractKsToParameters              
-00005335  UARTMSP_dmaRx                      
-00005431  GPIO_hwiIntFxn                     
-00005529  MLX90640_DataProcessing            
-00005621  UART_readFullFeatured              
-00005717  xQueueGiveFromISR                  
-0000580b  I2CSupport_powerSetConstraint      
-000058f9  vTaskSwitchContext                 
-000059e5  xQueueReceiveFromISR               
-00005ad1  vTaskDelete                        
-00005bb9  DL_MCAN_config                     
-00005c9d  DL_MCAN_writeMsgRam                
-00005d81  MLX90640_GetTa                     
-00005e65  __aeabi_dmul                       
-00005e65  __muldf3                           
-00005f49  xTaskPriorityInherit               
-0000610d  DL_MCAN_init                       
-000061e9  DL_SYSCTL_configSYSPLL             
-000062c5  DMAMSPM0_init                      
-000063a1  SYSCFG_DL_MCAN0_init               
-0000647d  DL_MCAN_setBitTime                 
-00006555  ldexp                              
-00006555  ldexpl                             
-00006555  scalbn                             
-00006555  scalbnl                            
-0000662d  __aeabi_fsub                       
-0000662d  __subsf3                           
-00006637  __addsf3                           
-00006637  __aeabi_fadd                       
-000067d9  xTaskPriorityDisinherit            
-0000689d  DMAMSPM0_open                      
-0000695d  xQueueGenericCreateStatic          
-00006a1d  HwiP_construct                     
-00006b95  vTaskStartScheduler                
-00006d07  I2C_init                           
-00006d09  CAN_transfer                       
-00006dbd  UART_writeCallback                 
-00006e71  xTaskCheckForTimeOut               
-00007135  xTaskRemoveFromEventList           
-000071e5  GPIO_setInterruptConfig            
-00007291  MLX90640_GetVdd                    
-0000733d  MLX90640_I2CWrite                  
-000073e9  xQueueGenericCreate                
-00007493  SVC_Handler                        
-00007495  DMA_Init                           
-0000753d  SYSCFG_DL_I2C_0_init               
-00007689  __udivmoddi4                       
-0000772b  UARTMSP_eventCallback              
-0000772d  vPortFree                          
-000077cd  xQueueGenericReset                 
-00007909  memcpy                             
-000079a3  UART_writeBuffered                 
-00007a3b  xTaskCreateStatic                  
-00007acf  xTaskCreate                        
-00007b61  DL_Interrupt_registerInterrupt     
-00007bf1  DMAMSPM0_setupTransfer             
-00007c81  xTimerGenericCommand               
-00007d11  __aeabi_fmul                       
-00007d11  __mulsf3                           
-00007eb5  SemaphoreP_pend                    
-00007f3f  __aeabi_idiv0                      
-00007f41  DMAMSPM0_close                     
-000080d1  __aeabi_fdiv                       
-000080d1  __divsf3                           
-00008153  __aeabi_ldiv0                      
-00008155  DL_UART_configBaudRate             
-000081d5  calloc                             
-00008251  eTaskConfirmSleepModeStatus        
-000083c5  xTimerCreateTimerTask              
-00008441  __TI_decompress_lzss               
-000084bd  UARTMSP_enableInts                 
-00008535  I2CSupport_primeTransfer           
-000085a9  __gedf2                            
-000085a9  __gtdf2                            
-0000861c  C$$EXIT                            
-0000861d  HOSTexit                           
-00008621  __aeabi_d2f                        
-00008621  __truncdfsf2                       
-00008709  pthread_exit                       
-000087e5  vListInsert                        
-00008851  vQueueWaitForMessageRestricted     
-00008925  __cmpdf2                           
-00008925  __eqdf2                            
-00008925  __ledf2                            
-00008925  __ltdf2                            
-00008925  __nedf2                            
-0000898d  __aeabi_dcmpeq                     
-000089a1  __aeabi_dcmplt                     
-000089b5  __aeabi_dcmple                     
-000089c9  __aeabi_dcmpge                     
-000089dd  __aeabi_dcmpgt                     
-000089f1  __aeabi_fcmpeq                     
-00008a05  __aeabi_fcmplt                     
-00008a19  __aeabi_fcmple                     
-00008a2d  __aeabi_fcmpge                     
-00008a41  __aeabi_fcmpgt                     
-00008a53  memset                             
-00008ab5  DL_I2C_fillControllerTXFIFO        
-00008b71  pthread_setcancelstate             
-00008bcd  DL_MCAN_lpbkModeEnable             
-00008c25  __clzsi2                           
-00008c7d  main                               
-00008cd5  __aeabi_errno_addr                 
-00008d29  vPortSetupTimerInterrupt           
-00008dcd  MLX90640_ReadTemperatures          
-00008ebd  vTaskSetThreadLocalStoragePointer  
-00008f0d  DL_DMA_initChannel                 
-00008f59  MLX90640_Init                      
-00008fa5  SYSCFG_DL_SYSCTL_init              
-00008ff1  pvTaskGetThreadLocalStoragePointer 
-0000903d  pxPortInitialiseStack              
-00009089  malloc                             
-000090d5  DL_UART_init                       
-0000911d  uxListRemove                       
-00009165  RingBuf_put                        
-000091f1  DL_MCAN_getRevisionId              
-00009235  HwiP_create                        
-00009279  __aeabi_memcpy                     
-00009279  __aeabi_memcpy4                    
-00009279  __aeabi_memcpy8                    
-00009281  PendSV_Handler                     
-00009309  vTaskPlaceOnEventListRestricted    
-0000934d  RingBuf_get                        
-00009391  MLX90640_SetRefreshRate            
-000093d1  MLX90640_SetResolution             
-00009411  SemaphoreP_constructBinary         
-00009451  __aeabi_uidiv                      
-00009451  __aeabi_uidivmod                   
-00009491  __aeabi_f2d                        
-00009491  __extendsfdf2                      
-000094d1  xPortStartScheduler                
-00009511  RingBuf_putAdvance                 
-0000954f  UART_writeFullFeatured             
-0000958d  DL_I2C_flushControllerTXFIFO       
-000095c9  __aeabi_i2f                        
-000095c9  __floatsisf                        
-00009605  __gesf2                            
-00009605  __gtsf2                            
-00009641  mainThread                         
-000096b9  __TI_auto_init_nobinit_nopinit     
-000096f5  __cmpsf2                           
-000096f5  __eqsf2                            
-000096f5  __lesf2                            
-000096f5  __ltsf2                            
-000096f5  __nesf2                            
-00009731  __muldsi3                          
-0000976b  vListInsertEnd                     
-000097a5  HwiP_dispatch                      
-000097dd  MLX90640_CheckStatus               
-00009815  MLX90640_SetInterleavedMode        
-0000984d  RingBuf_putPointer                 
-00009885  SYSCFG_DL_GPIO_init                
-000098bd  SemaphoreP_createBinary            
-0000992d  xTaskGetApplicationTaskTag         
-00009965  xTaskGetSchedulerState             
-0000999d  DL_MCAN_TXBufAddReq                
-000099d1  DL_MCAN_setExtIDAndMask            
-00009a05  HwiP_disable                       
-00009a39  MLX90640_I2CInit                   
-00009a6d  RingBuf_getConsume                 
-00009aa1  SYSCFG_DL_initPower                
-00009b09  pthread_attr_setschedparam         
-00009b3d  Reset_Handler                      
-00009b75  vTaskPlaceOnEventList              
-00009ba9  vTaskSetApplicationTaskTag         
-00009bdd  vTaskStepTick                      
-00009c11  vQueueDelete                       
-00009c45  DL_I2C_flushControllerRXFIFO       
-00009c75  HwiP_inISR                         
-00009d33  pthread_attr_setdetachstate        
-00009d61  DMAMSPM0_disableChannel            
-00009d8d  SemaphoreP_post                    
-00009db9  SysTick_Handler                    
-00009e11  __aeabi_i2d                        
-00009e11  __floatsidf                        
-00009e3d  _pthread_cleanup_pop               
-00009e69  vListInitialise                    
-00009e95  vPortExitCritical                  
-00009eeb  I2C_cancel                         
-00009f15  SYSCFG_DL_init                     
-00009f3d  __aeabi_ui2f                       
-00009f3d  __floatunsisf                      
-00009f8d  vApplicationGetIdleTaskMemory      
-00009fb5  vApplicationGetTimerTaskMemory     
-00009fdd  _c_int00_noargs                    
-0000a005  DL_I2C_setClockConfig              
-0000a02b  RingBuf_getPointer                 
-0000a051  DL_MCAN_setClockConfig             
-0000a075  HwiP_Params_init                   
-0000a099  HwiP_restore                       
-0000a0bd  PTLS_taskDeleteHook                
-0000a0e1  SYSCFG_DL_SYSCTL_CLK_init          
-0000a105  __aeabi_ui2d                       
-0000a105  __floatunsidf                      
-0000a129  __aeabi_lmul                       
-0000a129  __muldi3                           
-0000a14d  HardFault_Handler                  
-0000a16d  HwiP_destruct                      
-0000a18d  pvTaskIncrementMutexHeldCount      
-0000a1ad  vTaskInternalSetTimeOutState       
-0000a1cd  __aeabi_llsl                       
-0000a1cd  __ashldi3                          
-0000a229  pthread_attr_init                  
-0000a245  PTLS_getBuf                        
-0000a25f  PTLS_setBuf                        
-0000a279  DL_MCAN_setOpMode                  
-0000a291  MLX90640_SetI2CHandle              
-0000a2a9  prvGetRegistersFromStack           
-0000a2c1  pthread_self                       
-0000a2d9  vPortEnterCritical                 
-0000a2f1  vPortYield                         
-0000a309  HwiP_delete                        
-0000a321  DL_Interrupt_unregisterInterrupt   
-0000a335  HwiP_disableInterrupt              
-0000a349  HwiP_enableInterrupt               
-0000a35d  I2CSupport_controllerFinish        
-0000a371  __aeabi_uldivmod                   
-0000a385  aligned_alloc                      
-0000a399  xTaskGetCurrentTaskHandle          
-0000a3ad  xTaskGetTickCount                  
-0000a3c1  DL_UART_setClockConfig             
-0000a3d3  MLX90640_DumpEE                    
-0000a3e5  pthread_attr_setstacksize          
-0000a3f7  __TI_decompress_none               
-0000a409  DL_MCAN_getOpMode                  
-0000a419  DL_MCAN_isMemInitDone              
-0000a429  DMAMSPM0_getCurrTransferSize       
-0000a439  I2C_transfer                       
-0000a449  SemaphoreP_delete                  
-0000a459  UART0_IRQHandler                   
-0000a469  free                               
-0000a479  vTaskSuspendAll                    
-0000a489  __TI_zero_init                     
-0000a499  RingBuf_construct                  
-0000a4a9  __aeabi_memset                     
-0000a4a9  __aeabi_memset4                    
-0000a4a9  __aeabi_memset8                    
-0000a4b7  vListInitialiseItem                
-0000a4d1  I2C_Params_init                    
-0000a4dd  __aeabi_memclr                     
-0000a4dd  __aeabi_memclr4                    
-0000a4dd  __aeabi_memclr8                    
-0000a4e9  memalign                           
-0000a4f5  realloc                            
-0000a501  vTaskMissedYield                   
-0000a50d  DL_Common_delayCycles              
-0000a55d  ulSetInterruptMaskFromISR          
-0000a565  ClockP_getSystemTickPeriod         
-0000a58d  vClearInterruptMaskFromISR         
-0000a593  abort                              
-0000a5a9  _system_pre_init                   
-0000a5ad  vApplicationStackOverflowHook      
-0000a684  DMA_Ch_defaultParams               
-0000a73c  I2CMSPM0HWAttrs                    
-0000a800  UARTMSPSupportFxns                 
-0000a814  GPIO_config                        
-0000a83c  DMAMSPM0_Config                    
-0000a844  I2C_config                         
-0000a84c  UART_config                        
-0000a863  GPIO_pinLowerBound                 
-0000a864  uxTopUsedPriority                  
-0000a86a  GPIO_pinUpperBound                 
-0000a86b  I2C_count                          
-0000a8b0  __TI_Handler_Table_Base            
-0000a8bc  __TI_Handler_Table_Limit           
-0000a8cc  __TI_CINIT_Base                    
-0000a8e4  __TI_CINIT_Limit                   
-0000a8e4  __TI_CINIT_Warm                    
+00000b31  MLX90640_CalculateTo               
+00001151  ExtractAlphaParameters             
+0000168d  UARTMSP_interruptHandler           
+00001b85  ExtractOffsetParameters            
+00002035  ExtractKvPixelParameters           
+000022ad  ExtractKtaPixelParameters          
+000024e5  MLX90640_ExtractParameters         
+00002701  DL_MCAN_msgRAMConfig               
+00002915  GPIO_setConfigAndMux               
+00002b25  I2C_open                           
+00002d19  xQueueSemaphoreTake                
+00002f05  ExtractDeviatingPixels             
+000032bd  xQueueGenericSend                  
+0000348f  ADC0_IRQHandler                    
+0000348f  ADC1_IRQHandler                    
+0000348f  AES_IRQHandler                     
+0000348f  CANFD0_IRQHandler                  
+0000348f  DAC0_IRQHandler                    
+0000348f  DMA_IRQHandler                     
+0000348f  Default_Handler                    
+0000348f  GROUP0_IRQHandler                  
+0000348f  GROUP1_IRQHandler                  
+0000348f  I2C0_IRQHandler                    
+0000348f  I2C1_IRQHandler                    
+0000348f  NMI_Handler                        
+0000348f  RTC_IRQHandler                     
+0000348f  SPI0_IRQHandler                    
+0000348f  SPI1_IRQHandler                    
+0000348f  TIMA0_IRQHandler                   
+0000348f  TIMA1_IRQHandler                   
+0000348f  TIMG0_IRQHandler                   
+0000348f  TIMG12_IRQHandler                  
+0000348f  TIMG6_IRQHandler                   
+0000348f  TIMG7_IRQHandler                   
+0000348f  TIMG8_IRQHandler                   
+0000348f  UART1_IRQHandler                   
+0000348f  UART2_IRQHandler                   
+0000348f  UART3_IRQHandler                   
+00003491  pvPortMalloc                       
+00003651  MLX90640_GetFrameData              
+000039b1  xQueueReceive                      
+00003b55  ExtractCPParameters                
+00003ce9  __aeabi_dsub                       
+00003ce9  __subdf3                           
+00003cf3  __adddf3                           
+00003cf3  __aeabi_dadd                       
+00003e7b  I2CSupport_powerRelConstraint      
+00003e7d  vPortSuppressTicksAndSleep         
+00004005  sqrt                               
+00004005  sqrtl                              
+00004309  MLX90640_I2CRead                   
+0000446d  xTaskIncrementTick                 
+00004719  pthread_create                     
+00004865  xTaskResumeAll                     
+00004999  I2C_transferTimeout                
+00004ac5  xQueueGenericSendFromISR           
+00004d01  RingBuf_getn                       
+00004e1b  RingBuf_putn                       
+00004f31  vTaskSuspend                       
+00005041  __aeabi_ddiv                       
+00005041  __divdf3                           
+00005255  vTaskPriorityDisinheritAfterTimeout
+00005355  UARTMSP_dmaRx                      
+00005451  GPIO_hwiIntFxn                     
+00005549  MLX90640_DataProcessing            
+00005641  UART_readFullFeatured              
+00005737  I2CSupport_powerSetConstraint      
+00005739  DL_MCAN_writeMsgRam                
+0000582d  ExtractKsToParameters              
+00005921  xQueueGiveFromISR                  
+00005b01  vTaskSwitchContext                 
+00005bed  xQueueReceiveFromISR               
+00005cd9  vTaskDelete                        
+00005dc1  DL_MCAN_config                     
+00005ea5  MLX90640_GetTa                     
+00005f89  __aeabi_dmul                       
+00005f89  __muldf3                           
+0000606d  xTaskPriorityInherit               
+00006231  DL_MCAN_init                       
+0000630d  DL_SYSCTL_configSYSPLL             
+000063e9  DMAMSPM0_init                      
+000064c5  SYSCFG_DL_MCAN0_init               
+000065a1  DL_MCAN_setBitTime                 
+00006679  ldexp                              
+00006679  ldexpl                             
+00006679  scalbn                             
+00006679  scalbnl                            
+00006751  __aeabi_fsub                       
+00006751  __subsf3                           
+0000675b  __addsf3                           
+0000675b  __aeabi_fadd                       
+000068fd  xTaskPriorityDisinherit            
+000069c1  DMAMSPM0_open                      
+00006a81  xQueueGenericCreateStatic          
+00006b41  HwiP_construct                     
+00006cb9  vTaskStartScheduler                
+00006e2b  I2C_init                           
+00006e2d  MLX90640_I2CWrite                  
+00006ee1  UART_writeCallback                 
+00006f95  xTaskCheckForTimeOut               
+00007259  xTaskRemoveFromEventList           
+00007309  GPIO_setInterruptConfig            
+000073b5  MLX90640_GetVdd                    
+00007461  xQueueGenericCreate                
+0000750b  SVC_Handler                        
+0000750d  DMA_Init                           
+000075b5  SYSCFG_DL_I2C_0_init               
+0000765d  CAN_transfer                       
+000077a5  __udivmoddi4                       
+00007847  UARTMSP_eventCallback              
+00007849  vPortFree                          
+000078e9  xQueueGenericReset                 
+00007a25  memcpy                             
+00007abf  UART_writeBuffered                 
+00007b57  xTaskCreateStatic                  
+00007beb  xTaskCreate                        
+00007c7d  DL_Interrupt_registerInterrupt     
+00007d0d  DMAMSPM0_setupTransfer             
+00007d9d  xTimerGenericCommand               
+00007e2d  __aeabi_fmul                       
+00007e2d  __mulsf3                           
+00007fd1  SemaphoreP_pend                    
+0000805b  __aeabi_idiv0                      
+0000805d  DMAMSPM0_close                     
+000081ed  __aeabi_fdiv                       
+000081ed  __divsf3                           
+0000826f  __aeabi_ldiv0                      
+00008271  DL_UART_configBaudRate             
+000082f1  calloc                             
+0000836d  eTaskConfirmSleepModeStatus        
+000084e1  xTimerCreateTimerTask              
+0000855d  UARTMSP_enableInts                 
+000085d5  __TI_decompress_lzss               
+0000864d  I2CSupport_primeTransfer           
+000086c1  __aeabi_d2f                        
+000086c1  __truncdfsf2                       
+000087a9  __gedf2                            
+000087a9  __gtdf2                            
+00008819  pthread_exit                       
+00008889  __cmpdf2                           
+00008889  __eqdf2                            
+00008889  __ledf2                            
+00008889  __ltdf2                            
+00008889  __nedf2                            
+00008961  vListInsert                        
+000089cd  vQueueWaitForMessageRestricted     
+00008aa1  __aeabi_dcmpeq                     
+00008ab5  __aeabi_dcmplt                     
+00008ac9  __aeabi_dcmple                     
+00008add  __aeabi_dcmpge                     
+00008af1  __aeabi_dcmpgt                     
+00008b05  __aeabi_fcmpeq                     
+00008b19  __aeabi_fcmplt                     
+00008b2d  __aeabi_fcmple                     
+00008b41  __aeabi_fcmpge                     
+00008b55  __aeabi_fcmpgt                     
+00008b67  memset                             
+00008bc9  DL_I2C_fillControllerTXFIFO        
+00008c85  pthread_setcancelstate             
+00008ce1  DL_MCAN_lpbkModeEnable             
+00008d39  __clzsi2                           
+00008d91  main                               
+00008de9  __aeabi_errno_addr                 
+00008e3d  vPortSetupTimerInterrupt           
+00008ee1  MLX90640_ReadTemperatures          
+00008fd1  vTaskSetThreadLocalStoragePointer  
+00009021  DL_DMA_initChannel                 
+0000906d  MLX90640_Init                      
+000090b9  SYSCFG_DL_SYSCTL_init              
+00009105  pvTaskGetThreadLocalStoragePointer 
+00009151  pxPortInitialiseStack              
+0000919d  malloc                             
+000091e9  DL_UART_init                       
+00009231  uxListRemove                       
+00009279  RingBuf_put                        
+00009305  DL_MCAN_getRevisionId              
+00009349  HwiP_create                        
+0000938d  _system_pre_init                   
+00009391  PendSV_Handler                     
+00009419  vTaskPlaceOnEventListRestricted    
+0000945d  RingBuf_get                        
+000094a1  MLX90640_SetRefreshRate            
+000094e1  MLX90640_SetResolution             
+00009521  SemaphoreP_constructBinary         
+00009561  __aeabi_uidiv                      
+00009561  __aeabi_uidivmod                   
+000095a1  __aeabi_f2d                        
+000095a1  __extendsfdf2                      
+000095e1  xPortStartScheduler                
+00009621  RingBuf_putAdvance                 
+0000965f  UART_writeFullFeatured             
+0000969d  DL_I2C_flushControllerTXFIFO       
+000096d9  __aeabi_i2f                        
+000096d9  __floatsisf                        
+00009715  __gesf2                            
+00009715  __gtsf2                            
+00009751  mainThread                         
+000097c9  __TI_auto_init_nobinit_nopinit     
+00009805  __cmpsf2                           
+00009805  __eqsf2                            
+00009805  __lesf2                            
+00009805  __ltsf2                            
+00009805  __nesf2                            
+00009841  __muldsi3                          
+0000987b  vListInsertEnd                     
+000098b5  HwiP_dispatch                      
+000098ed  MLX90640_CheckStatus               
+00009925  MLX90640_SetInterleavedMode        
+0000995d  RingBuf_putPointer                 
+00009995  SYSCFG_DL_GPIO_init                
+000099cd  SemaphoreP_createBinary            
+00009a3d  xTaskGetApplicationTaskTag         
+00009a75  xTaskGetSchedulerState             
+00009aad  DL_MCAN_TXBufAddReq                
+00009ae1  DL_MCAN_setExtIDAndMask            
+00009b15  HwiP_disable                       
+00009b49  MLX90640_I2CInit                   
+00009b7d  RingBuf_getConsume                 
+00009bb1  SYSCFG_DL_initPower                
+00009c19  pthread_attr_setschedparam         
+00009c4d  Reset_Handler                      
+00009c85  vTaskPlaceOnEventList              
+00009cb9  vTaskSetApplicationTaskTag         
+00009ced  vTaskStepTick                      
+00009d21  vQueueDelete                       
+00009d55  DL_I2C_flushControllerRXFIFO       
+00009d85  HwiP_inISR                         
+00009e43  pthread_attr_setdetachstate        
+00009e71  DMAMSPM0_disableChannel            
+00009e9d  SemaphoreP_post                    
+00009ec9  SysTick_Handler                    
+00009f21  __aeabi_i2d                        
+00009f21  __floatsidf                        
+00009f4d  _pthread_cleanup_pop               
+00009f79  vListInitialise                    
+00009fa5  vPortExitCritical                  
+00009ffb  I2C_cancel                         
+0000a025  SYSCFG_DL_init                     
+0000a04d  __aeabi_ui2f                       
+0000a04d  __floatunsisf                      
+0000a09d  vApplicationGetIdleTaskMemory      
+0000a0c5  vApplicationGetTimerTaskMemory     
+0000a0ed  _c_int00_noargs                    
+0000a115  DL_I2C_setClockConfig              
+0000a13b  RingBuf_getPointer                 
+0000a161  DL_MCAN_setClockConfig             
+0000a185  HwiP_Params_init                   
+0000a1a9  HwiP_restore                       
+0000a1cd  PTLS_taskDeleteHook                
+0000a1f1  SYSCFG_DL_SYSCTL_CLK_init          
+0000a215  __aeabi_ui2d                       
+0000a215  __floatunsidf                      
+0000a239  __aeabi_lmul                       
+0000a239  __muldi3                           
+0000a25d  HardFault_Handler                  
+0000a27d  HwiP_destruct                      
+0000a29d  pvTaskIncrementMutexHeldCount      
+0000a2bd  vTaskInternalSetTimeOutState       
+0000a2dd  __aeabi_llsl                       
+0000a2dd  __ashldi3                          
+0000a339  pthread_attr_init                  
+0000a355  PTLS_getBuf                        
+0000a36f  PTLS_setBuf                        
+0000a389  DL_MCAN_setOpMode                  
+0000a3a1  MLX90640_SetI2CHandle              
+0000a3b9  prvGetRegistersFromStack           
+0000a3d1  pthread_self                       
+0000a3e9  vPortEnterCritical                 
+0000a401  vPortYield                         
+0000a419  HwiP_delete                        
+0000a431  DL_Interrupt_unregisterInterrupt   
+0000a445  HwiP_disableInterrupt              
+0000a459  HwiP_enableInterrupt               
+0000a46d  I2CSupport_controllerFinish        
+0000a481  __aeabi_uldivmod                   
+0000a495  aligned_alloc                      
+0000a4a9  xTaskGetCurrentTaskHandle          
+0000a4bd  xTaskGetTickCount                  
+0000a4d1  DL_UART_setClockConfig             
+0000a4e3  MLX90640_DumpEE                    
+0000a4f5  pthread_attr_setstacksize          
+0000a507  __TI_decompress_none               
+0000a519  DL_MCAN_getOpMode                  
+0000a529  DL_MCAN_isMemInitDone              
+0000a539  DMAMSPM0_getCurrTransferSize       
+0000a549  I2C_transfer                       
+0000a559  SemaphoreP_delete                  
+0000a569  UART0_IRQHandler                   
+0000a579  free                               
+0000a589  vTaskSuspendAll                    
+0000a599  __TI_zero_init                     
+0000a5a9  RingBuf_construct                  
+0000a5b9  __aeabi_memset                     
+0000a5b9  __aeabi_memset4                    
+0000a5b9  __aeabi_memset8                    
+0000a5c7  vListInitialiseItem                
+0000a5e1  I2C_Params_init                    
+0000a5ed  __aeabi_memclr                     
+0000a5ed  __aeabi_memclr4                    
+0000a5ed  __aeabi_memclr8                    
+0000a5f9  memalign                           
+0000a605  realloc                            
+0000a611  vTaskMissedYield                   
+0000a61d  DL_Common_delayCycles              
+0000a665  __aeabi_memcpy                     
+0000a665  __aeabi_memcpy4                    
+0000a665  __aeabi_memcpy8                    
+0000a66d  ulSetInterruptMaskFromISR          
+0000a675  ClockP_getSystemTickPeriod         
+0000a69f  vClearInterruptMaskFromISR         
+0000a6b1  vApplicationStackOverflowHook      
+0000a6b4  C$$EXIT                            
+0000a6b5  abort                              
+0000a794  DMA_Ch_defaultParams               
+0000a84c  I2CMSPM0HWAttrs                    
+0000a910  UARTMSPSupportFxns                 
+0000a924  GPIO_config                        
+0000a94c  DMAMSPM0_Config                    
+0000a954  I2C_config                         
+0000a95c  UART_config                        
+0000a973  GPIO_pinLowerBound                 
+0000a974  uxTopUsedPriority                  
+0000a97a  GPIO_pinUpperBound                 
+0000a97b  I2C_count                          
+0000a9c4  __TI_Handler_Table_Base            
+0000a9d0  __TI_Handler_Table_Limit           
+0000a9e0  __TI_CINIT_Base                    
+0000a9f8  __TI_CINIT_Limit                   
+0000a9f8  __TI_CINIT_Warm                    
 20200000  __start___llvm_prf_bits            
 20200000  __start___llvm_prf_cnts            
 20200000  __stop___llvm_prf_bits             
@@ -1416,4 +1406,4 @@ ffffffff  binit
 UNDEFED   __mpu_init                         
 UNDEFED   _system_post_cinit                 
 
-[372 symbols]
+[371 symbols]
