@@ -1,0 +1,3 @@
+# FIXED
+
+MLX90640_Init.o: ../MLX90640_Init.c
